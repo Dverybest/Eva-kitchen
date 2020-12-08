@@ -1,0 +1,2 @@
+[1207/144934.136:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1208/101517.445:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\ACER\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\657de527-7618-4a2a-96a8-34ca2813174e: The system cannot find the path specified. (0x3)
