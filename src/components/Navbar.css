@@ -1,0 +1,85 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px 10px 35px;
+}
+.nav .brand{
+    flex: 2;
+    font-family: 'Sail', cursive;
+    font-size: 1.7rem;
+    text-decoration: none;
+    color: black;
+}
+.nav .brand span{
+    color: #ff8d23;
+}
+ .NavBar, .NavBar-mobile{
+    height: 40px;
+    align-self: center;
+    padding: 0px;
+    margin: 0px;
+    flex: 2;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+}
+.nav ul li a{
+    color: black;
+    text-decoration: #ff8d23;
+    border-bottom: 1px solid transparent;
+
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: capitalize;
+}
+.nav ul li a:hover{
+    border-bottom: 1px solid #ff8d23;
+}
+.nav ul li a:active{
+    border-bottom: 1px solid #ff8d23;
+}
+.hamburger{
+    display: none;
+}
+
+@media screen and (max-width: 575px){
+    .nav{
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        padding-left: 15px;
+    }
+   
+    .NavBar{
+        display: none;
+    }
+    .hamburger{
+        display: block;
+        color: black;
+        border-style: none;
+        background: transparent;
+        font-size: 1.5rem;
+        width: 40%;
+        justify-self: center;
+
+    }
+    .NavBar-mobile{
+        display: block;
+        width: 55%;
+        height: 300px;
+        margin-right: 0px;
+        margin-left: 40%;
+        margin-top: 70px;
+        padding-top: 20px;
+        position: absolute;
+        background-color: white;
+    }
+    .NavBar-mobile li{
+        margin-top: 15px;
+    }
+    
+}
