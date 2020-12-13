@@ -7,9 +7,11 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App">
-    
+
      <Navbar />
      <Route path='/' Component={LandingPage} />
+
+     <LandingPage />
     </div>
     </BrowserRouter>
   );

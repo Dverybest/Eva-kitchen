@@ -16,7 +16,7 @@ const Navbar = () => {
     
     return (
         <nav>
-            <div className='container nav'>
+            <div className=' nav'>
                 <a href='#' className='brand'>Eva <span>Kitchen</span></a>
 
                 <button className='hamburger' onClick={handleClick}>

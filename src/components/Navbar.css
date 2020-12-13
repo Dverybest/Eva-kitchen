@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0px 10px 0px;
+    padding: 15px 10px 10px 35px;
 }
 .nav .brand{
     flex: 2;
@@ -15,6 +15,10 @@
     color: #ff8d23;
 }
  .NavBar, .NavBar-mobile{
+    height: 40px;
+    align-self: center;
+    padding: 0px;
+    margin: 0px;
     flex: 2;
     display: flex;
     justify-content: space-evenly;
@@ -25,6 +29,13 @@
     color: black;
     text-decoration: #ff8d23;
     border-bottom: 1px solid transparent;
+
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: capitalize;
 }
 .nav ul li a:hover{
     border-bottom: 1px solid #ff8d23;
