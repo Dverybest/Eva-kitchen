@@ -1,6 +1,7 @@
 import React from 'react'
 import './LandingPage.css'
 import Dish1 from '../images/dish1.svg'
+import image1 from '../images/about image.svg'
 
 
 const LandingPage = () => {
@@ -32,6 +33,18 @@ const LandingPage = () => {
                         <div className='icons'><i class="fa fa-phone" aria-hidden="true"></i></div>
                         <span>+234 706 121 1353</span>
                         <span>Call Online</span>
+                    </div>
+                </div>
+            </section>
+            <section className='landingPage-about'>
+                <span className='sec-text'>ABOUT US</span>
+                <h3>All you need to know about us</h3>
+                <div className='landingPage-about-content'>
+                    <img src={image1} alt='' />
+                    <div className='landingPage-about-info'>
+                        <p>“Healthy” isn’t just an idea. “Healthy” is science, and we take it seriously. Every delicious dish and drink at EvaKitchen is crafted to be better for your taste buds and your body.</p>
+                        <p>At EvaKitchen, our menu is carefully crafted so that every bite and every refreshing sip serve up big flavor, an abundance of fresh ingredients and a taste of the unexpected. Our artisan chefs create crave-worthy classics alongside a steady rotation of seasonal offerings that take advantage of naturally ripe fruits and vegetables so their flavor is full and their nutrients, rich. Creative, hand-crafted beverages built around seasonality, quality ingredients and simple preparations complement every occasion from brunch, lunch, dinner and, of course, dessert. Always room for dessert.</p>
+                        <button>Learn More</button>
                     </div>
                 </div>
             </section>
