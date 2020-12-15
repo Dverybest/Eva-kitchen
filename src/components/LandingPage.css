@@ -120,7 +120,7 @@
     padding-bottom: 20px;
 }
 .landingPage-about-info button{
-    width: 30%;
+    width: 40%;
     background-color: #ff8d23;
     color: white;
     border-radius: 25px;
@@ -173,7 +173,6 @@
         padding: 0px;
         margin-top: 30px;
         width: 100%;
-        background-color: indianred;
     }
     .hero-info{
         justify-content: center;
