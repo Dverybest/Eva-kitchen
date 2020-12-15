@@ -48,6 +48,10 @@ const LandingPage = () => {
                     </div>
                 </div>
             </section>
+            <section className='landingPage-ad'>
+                <p>Looking for the best affordable hospitality in town?</p>
+                <button>Book Now</button>
+            </section>
             
         </div>
     )
