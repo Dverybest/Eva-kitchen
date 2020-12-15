@@ -5,27 +5,32 @@
 .hero{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     background-image: url('../images/background1.svg');
     background-repeat: no-repeat;
     background-size: cover;
+    height: 1000px;
 }
 .hero-intro{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
-    padding: 30px 0px 10px 0px;
+    margin-top: 100px;
 }
 .hero-info{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    width: 75%;
+    width: 100%;
+}
+.hero-info p{
+    width: 87%;
 }
 .hero-info h1{
     font-family: 'Raleway', sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 56px;
+    font-size: 50px;
     line-height: 66px;
     text-transform: capitalize;
     color: #000000;
@@ -42,5 +47,178 @@
 .hero-image{
    display: flex;
    justify-content: center;
-   align-items: center;
+   align-items: flex-start;
+}
+.hero-contact{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 100px;
+}
+.hero-contact-info{
+    width: 60%;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid transparent;
+    background-color: #F6EDEF;
+    box-shadow: 8.82458px 8.82458px 88.2458px 3.52983px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 50px 0px 50px;
+    padding: 10px;
+}
+.clock{
+    justify-self: end;
+}
+.phone{
+    justify-self: left;
+}
+.icons{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: #ff8d23;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+.landingPage-about{
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 30px;
+}
+.sec-text{
+    color: #ff8d23;
+}
+.landingPage-about h3{
+    font-weight: bold;
+}
+.landingPage-about-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding-top: 30px;
+}
+.landingPage-about-content img{
+    width: 80%;
+    height: auto;
+    justify-self: flex-end;
+}
+.landingPage-about-info{
+    text-align: justify;
+    width: 90%;
+    justify-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.landingPage-about-info p{
+    padding-bottom: 20px;
+}
+.landingPage-about-info button{
+    width: 30%;
+    background-color: #ff8d23;
+    color: white;
+    border-radius: 25px;
+    border-style: none;
+    padding: 10px;
+    margin-top: 30px;
+}
+.landingPage-ad{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-content: center;
+    gap: 20px;
+    background-image: url('../images/background2.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 50px;
+    height: 300px;
+}
+.landingPage-ad p{
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    width: 87%;
+}
+.landingPage-ad button{
+    color: #ff8d23;
+    background-color: white;
+    border-radius: 25px;
+    border-style: none;
+    height: 40%;
+    padding: 5px 40px 5px 40px;
+    margin-left: 55%;
+    align-self: center;
+    justify-self: center;
+    
+}
+@media screen and (max-width: 700px){
+    .hero{
+        height: 900px;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+    }
+    .hero-image{
+        display: none;
+    }
+    .hero-intro{
+        display: flex;
+        padding: 0px;
+        margin-top: 30px;
+    }
+    .hero-info{
+        width: 90%;
+        padding: 50px;
+    }
+    .hero-contact{
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+    }
+    .hero-contact-info{
+        width: 50%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .landingPage-about{
+        height: 1400px;
+        justify-content: space-evenly;
+        margin-top: 50px;
+    }
+    .landingPage-about-content{
+        display: flex;
+        flex-direction: column;
+        padding-top: 0px;
+    }
+    .landingPage-about-content img{
+        width: 100%;
+        
+    }
+    .landingPage-about-info{
+        width: 100%;
+        padding: 30px;
+    }
+    .landingPage-ad{
+        margin-top: 0px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .landingPage-ad p{
+        width: 81%;
+        font-size: 2rem;
+    }
+    .landingPage-ad button{
+        margin-left: 0%;
+        /* padding: 0px; */
+        height: 15%;
+    }
 }
