@@ -8,7 +8,7 @@ const LandingPage = () => {
     return (
         <div className='LandingPage'>
             <section className='hero'>
-                <div className='hero-intro container'>
+                <div className='hero-intro '>
                     <div className='hero-info'>
                         <h1>Your Favourite Food Delivered Hot And Fresh</h1>
                         <p>Satisfy your craving by getting the food you want delivered to you fast. EvaKitchen is now available in selected areas in Enugu.</p>

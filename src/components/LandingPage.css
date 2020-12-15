@@ -22,6 +22,7 @@
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
+    padding-left: 100px;
 }
 .hero-info p{
     width: 87%;
@@ -119,7 +120,7 @@
     padding-bottom: 20px;
 }
 .landingPage-about-info button{
-    width: 30%;
+    width: 40%;
     background-color: #ff8d23;
     color: white;
     border-radius: 25px;
@@ -168,13 +169,18 @@
     }
     .hero-intro{
         display: flex;
+        justify-content: center;
         padding: 0px;
         margin-top: 30px;
+        width: 100%;
     }
     .hero-info{
-        width: 90%;
-        padding: 50px;
+        justify-content: center;
+        width: 80%;
+        padding: 10px;
+        /* background-color: green; */
     }
+    
     .hero-contact{
        display: flex;
        flex-direction: column;
@@ -189,7 +195,7 @@
     .landingPage-about{
         height: 1400px;
         justify-content: space-evenly;
-        margin-top: 50px;
+        margin-top: 100px;
     }
     .landingPage-about-content{
         display: flex;
