@@ -2,7 +2,6 @@ import Navbar from './components/Navbar'
 import  {BrowserRouter, Route } from 'react-router-dom'
 import LandingPage from './components/LandingPage'
 
-
 function App() {
   return (
     <BrowserRouter>
@@ -12,6 +11,7 @@ function App() {
      <Route path='/' Component={LandingPage} />
 
      <LandingPage />
+
     </div>
     </BrowserRouter>
   );
