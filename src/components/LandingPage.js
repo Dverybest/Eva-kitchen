@@ -14,7 +14,7 @@ const LandingPage = () => {
                         <div className='hero-info '>
                             <h1>Your Favourite Food Delivered Hot And Fresh</h1>
                             <p>Satisfy your craving by getting the food you want delivered to you fast. EvaKitchen is now available in selected areas in Enugu.</p>
-                            <button>Order Now <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                            <button>Order Now <i className="fa fa-arrow-right" aria-hidden="true"></i></button>
                         </div>
                         <div className='hero-image'>
                         <img src={Dish1} alt='' className='img-fluid' />
@@ -23,25 +23,25 @@ const LandingPage = () => {
                 <div className='container hero-contact'>
                     <div className='row px-0  justify-content-center'>
                         <div className='hero-contact-info col-md-4'>
-                            <div className='icons'><i class="fa fa-clock-o" aria-hidden="true"></i></div>
-                            <p>10:00am - 07:00pm</p>
+                            <div className='icons'><i className="fa fa-clock-o" aria-hidden="true"></i></div>
+                            <p className='mid_text'>10:00am - 07:00pm</p>
                             <p>Working Hours</p>
                         </div>
                         <div className='hero-contact-info col-md-4'>
-                            <div className='icons'><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-                            <p>Independence Layout Enugu</p>
+                            <div className='icons'><i className="fa fa-map-marker" aria-hidden="true"></i></div>
+                            <p className='mid_text'>Independence Layout Enugu</p>
                             <p>Get Direction</p>
                         </div>
                         <div className='hero-contact-info col-md-4'>
-                            <div className='icons'><i class="fa fa-phone" aria-hidden="true"></i></div>
-                            <p>+234 706 121 1353</p>
+                            <div className='icons'><i className="fa fa-phone" aria-hidden="true"></i></div>
+                            <p className='mid_text'>+234 706 121 1353</p>
                             <p>Call Online</p>
                         </div>
                     </div>
                 </div>
             </section>
             <section className='landingPage-about'>
-                <span className='sec-text'>ABOUT US</span>
+                <h2 className='sec-text'>ABOUT US</h2>
                 <h3>All you need to know about us</h3>
                 <div className='landingPage-about-content'>
                     <img src={image1} alt='' />
