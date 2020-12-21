@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Link} from 'react-router-dom'
+import {Link,withRouter} from 'react-router-dom'
 import './Navbar.css'
 
 const Navbar = () => {
@@ -17,7 +17,7 @@ const Navbar = () => {
     return (
         <nav>
             <div className=' nav'>
-                <a href='#' className='brand'>Eva <span>Kitchen</span></a>
+                <a href='/' className='brand'>Eva <span>Kitchen</span></a>
 
                 <button className='hamburger' onClick={handleClick}>
                         <i className='fa fa-bars'></i>
@@ -35,4 +35,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
+export default withRouter(Navbar)

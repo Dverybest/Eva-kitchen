@@ -1,18 +1,14 @@
-import Navbar from './components/Navbar'
-import  {BrowserRouter, Route } from 'react-router-dom'
+import React from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import LandingPage from './components/LandingPage'
 
 
 function App() {
   return (
-    <BrowserRouter>
-    <div className="App">
-
-     <Navbar />
-     <Route path='/' Component={LandingPage} />
-
-     <LandingPage />
-    </div>
+    <BrowserRouter>   
+      <Switch>
+        <Route exact path='/' component={LandingPage} />
+      </Switch>  
     </BrowserRouter>
   );
 }
