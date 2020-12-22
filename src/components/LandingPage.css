@@ -1,7 +1,9 @@
 .LandingPage {
     font-size: 16px;
 }
-
+h2, h3{
+    font-family: 'Inter';
+}
 .hero {
     display: flex;
     flex-direction: column;
@@ -94,7 +96,7 @@
 .hero-contact-info p {
     margin-bottom: 0px;
     text-align: center;
-    font-family: Lato;
+    font-family: 'Lato';
     font-style: normal;
     font-weight: 600;
     font-size: 11.4425px;
@@ -208,42 +210,27 @@
     align-self: center;
     justify-self: center;
 }
-<<<<<<< HEAD
+
 .landingPage-order{
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 500px;
     background-color: rgba(100, 81, 67, 0.05);
-}
-@media screen and (max-width: 700px){
-    .hero{
-        height: 900px;
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-    }
-    .hero-image{
-=======
+    /* padding-top: 50px; */
 
+}
 @media screen and (max-width: 700px) {
     .hero-image {
->>>>>>> 0578b74e9408827c2e4a217e8d54f96e32addb86
         display: none;
     }
     .hero-intro {
         margin: 30px;
     }
-<<<<<<< HEAD
-    .hero-info{
-        justify-content: center;
-        width: 80%;
-        padding: 10px;
-=======
     .hero-info p {
         max-width: 350px;
         font-size: 18px;
->>>>>>> 0578b74e9408827c2e4a217e8d54f96e32addb86
     }
     .hero-info h1 {
         font-size: 44px;
@@ -260,7 +247,7 @@
         margin-top: 20px;
         margin-bottom: 20px;
     }
-    .landingPage-about {}
+    /* .landingPage-about {} */
     .landingPage-about-content {
         display: flex;
         flex-direction: column;

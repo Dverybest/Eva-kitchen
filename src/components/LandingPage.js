@@ -2,12 +2,8 @@ import React from 'react'
 import './LandingPage.css'
 import Dish1 from '../images/dish1.svg'
 import image1 from '../images/about image.svg'
-<<<<<<< HEAD
-import Cards from './Cards'
-=======
 import Navbar from './Navbar'
->>>>>>> 0578b74e9408827c2e4a217e8d54f96e32addb86
-
+import Cards from './Cards'
 
 const LandingPage = () => {
     return (
@@ -60,16 +56,13 @@ const LandingPage = () => {
                 <p>Looking for the best affordable hospitality in town?</p>
                 <button>Book Now</button>
             </section>
-<<<<<<< HEAD
             
             <section className='landingPage-order'>
-                <span className='sec-text'>ORDER AND DELIVERY</span>
+                <h2 className='sec-text'>ORDER AND DELIVERY</h2>
                 <h3>Our delivery service is top notch</h3>
                 <Cards />
             </section>
-=======
 
->>>>>>> 0578b74e9408827c2e4a217e8d54f96e32addb86
         </div>
     )
 }
