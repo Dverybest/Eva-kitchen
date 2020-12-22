@@ -4,6 +4,7 @@
 h2, h3{
     font-family: 'Inter';
 }
+
 .hero {
     display: flex;
     flex-direction: column;
@@ -78,6 +79,8 @@ h2, h3{
 .hero-contact {
     padding: 50px;
 }
+
+
 
 .hero-contact-info {
     max-width: 290px;
@@ -296,8 +299,5 @@ h2, h3{
         margin-left: 0%;
         /* padding: 0px; */
         height: 50px;
-    }
-    .landingPage-order{
-        height: 1200px;
     }
 }

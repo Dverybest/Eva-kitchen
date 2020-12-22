@@ -5,6 +5,7 @@ import image1 from '../images/about image.svg'
 import Navbar from './Navbar'
 import Cards from './Cards'
 
+
 const LandingPage = () => {
     return (
         <div className='LandingPage'>
