@@ -3,6 +3,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 15px 10px 10px 35px;
+    position: fixed;
+    top:0;
+    left:0;
+    right: 0;
+    background-color: #ffffff;
+    z-index: 2;
 }
 .nav .brand{
     flex: 2;
@@ -40,8 +46,8 @@
 .nav ul li a:hover{
     border-bottom: 1px solid #ff8d23;
 }
-.nav ul li a:active{
-    border-bottom: 1px solid #ff8d23;
+.nav ul .active{
+    border-bottom: 2px solid #ff8d23;
 }
 .hamburger{
     display: none;
@@ -70,13 +76,13 @@
     .NavBar-mobile{
         display: block;
         width: 85%;
-        height: 850px;
-        margin-right: 0px;
+        height: 100vh;
         margin-left: 11%;
-        margin-top: 70px;
-        padding-top: 20px;
+        top: 60px;
+        right: 0;
         padding-left: 30px;
         position: absolute;
+        z-index: 2;
         background-color: white;
     }
     .NavBar-mobile li{
