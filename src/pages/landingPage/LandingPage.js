@@ -1,9 +1,9 @@
 import React from 'react'
 import './LandingPage.css'
-import Dish1 from '../images/dish1.svg'
-import image1 from '../images/about image.svg'
-import Navbar from './Navbar'
-import Cards from './Cards'
+import Dish1 from './landingPageImages/dish1.svg'
+import image1 from './landingPageImages/about image.svg'
+import Navbar from '../navbar/Navbar'
+import Cards from '../reusableCard/Cards'
 
 
 const LandingPage = () => {
@@ -21,6 +21,7 @@ const LandingPage = () => {
                         <img src={Dish1} alt='' className='img-fluid' />
                         </div>
                 </div>
+              
                 <div className='container hero-contact'>
                     <div className='row px-0  justify-content-center'>
                         <div className='hero-contact-info col-md-4'>

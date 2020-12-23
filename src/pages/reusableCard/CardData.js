@@ -1,6 +1,6 @@
-import pickMeals from '../images/pickMeals.svg'
-import fastDelivery from '../images/fastDelivery.svg'
-import checkout from '../images/checkout.svg'
+import pickMeals from '../landingPage/landingPageImages/pickMeals.svg'
+import fastDelivery from '../landingPage/landingPageImages/fastDelivery.svg'
+import checkout from '../landingPage/landingPageImages/checkout.svg'
 
 
 
