@@ -1,6 +1,6 @@
 .Card{
     width: 15rem;
-    height: 18rem;
+    height: 15rem;
     margin: 20px;
     display: flex;
     flex-direction: column;
@@ -22,6 +22,7 @@
 .Card-text{
     min-height: 72px;
     text-align: center;
+    margin-bottom: 0px;;
     font-family: 'Lato';
 }
 .card-container{
