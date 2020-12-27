@@ -4,7 +4,8 @@ import Dish1 from './landingPageImages/dish1.svg'
 import image1 from './landingPageImages/about image.svg'
 import Navbar from '../navbar/Navbar'
 import Cards from '../reusableCard/Cards'
-
+import MenuList from '../reusableMenuCard/menuList'
+import Footer from '../footer/Footer'
 
 const LandingPage = () => {
     return (
@@ -65,6 +66,13 @@ const LandingPage = () => {
                 <Cards />
             </section>
 
+            <section className='landingPage-menu'>
+                <h2 className='sec-text'>MENU</h2>
+                <h3>Choose from our most popular menu</h3>
+                <MenuList />
+            </section>
+    
+           <Footer />
         </div>
     )
 }
