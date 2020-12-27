@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import LandingPage from './components/LandingPage'
+import LandingPage from './pages/landingPage/LandingPage'
 
 
 function App() {
@@ -9,6 +9,8 @@ function App() {
       <Switch>
         <Route exact path='/' component={LandingPage} />
       </Switch>  
+
+    
     </BrowserRouter>
   );
 }

@@ -1,9 +1,11 @@
 import React from 'react'
 import './LandingPage.css'
-import Dish1 from '../images/dish1.svg'
-import image1 from '../images/about image.svg'
-import Navbar from './Navbar'
-
+import Dish1 from './landingPageImages/dish1.svg'
+import image1 from './landingPageImages/about image.svg'
+import Navbar from '../navbar/Navbar'
+import Cards from '../reusableCard/Cards'
+import MenuList from '../reusableMenuCard/menuList'
+import Footer from '../footer/Footer'
 
 const LandingPage = () => {
     return (
@@ -20,6 +22,7 @@ const LandingPage = () => {
                         <img src={Dish1} alt='' className='img-fluid' />
                         </div>
                 </div>
+              
                 <div className='container hero-contact'>
                     <div className='row px-0  justify-content-center'>
                         <div className='hero-contact-info col-md-4'>
@@ -56,7 +59,20 @@ const LandingPage = () => {
                 <p>Looking for the best affordable hospitality in town?</p>
                 <button>Book Now</button>
             </section>
+            
+            <section className='landingPage-order'>
+                <h2 className='sec-text'>ORDER AND DELIVERY</h2>
+                <h3>Our delivery service is top notch</h3>
+                <Cards />
+            </section>
 
+            <section className='landingPage-menu'>
+                <h2 className='sec-text'>MENU</h2>
+                <h3>Choose from our most popular menu</h3>
+                <MenuList />
+            </section>
+    
+           <Footer />
         </div>
     )
 }

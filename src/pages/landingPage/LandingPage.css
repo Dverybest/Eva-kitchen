@@ -1,12 +1,15 @@
 .LandingPage {
     font-size: 16px;
 }
+h2, h3{
+    font-family: 'Inter';
+}
 
 .hero {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-image: url('../images/background1.svg');
+    background-image: url('./landingPageImages/background1.svg');
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
@@ -77,6 +80,8 @@
     padding: 50px;
 }
 
+
+
 .hero-contact-info {
     max-width: 290px;
     justify-self: center;
@@ -88,13 +93,13 @@
     background-color: #F6EDEF;
     box-shadow: 8.82458px 8.82458px 88.2458px 3.52983px rgba(0, 0, 0, 0.25);
     border-radius: 0px 50px 0px 50px;
-    padding: 10px;
+    padding: 10px 0px;
 }
 
 .hero-contact-info p {
     margin-bottom: 0px;
     text-align: center;
-    font-family: Lato;
+    font-family: 'Lato';
     font-style: normal;
     font-weight: 600;
     font-size: 11.4425px;
@@ -182,7 +187,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-image: url('../images/background2.svg');
+    background-image: url('./landingPageImages/background2.svg');
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0px;
@@ -209,6 +214,23 @@
     justify-self: center;
 }
 
+.landingPage-order{
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(100, 81, 67, 0.05);
+    padding-top: 30px;
+}
+.landingPage-menu{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 30px;
+}
 @media screen and (max-width: 700px) {
     .hero-image {
         display: none;
@@ -235,7 +257,7 @@
         margin-top: 20px;
         margin-bottom: 20px;
     }
-    .landingPage-about {}
+    /* .landingPage-about {} */
     .landingPage-about-content {
         display: flex;
         flex-direction: column;
