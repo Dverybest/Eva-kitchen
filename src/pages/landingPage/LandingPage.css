@@ -174,7 +174,7 @@ h2, h3{
 }
 
 .landingPage-about-info button {
-    width: 40%;
+    width: 30%;
     background-color: #ff8d23;
     color: white;
     border-radius: 25px;
@@ -223,6 +223,10 @@ h2, h3{
     background-color: rgba(100, 81, 67, 0.05);
     padding-top: 30px;
 }
+.landingPage-order h3{
+    margin-top: -40px;
+    font-weight: bold;
+}
 .landingPage-menu{
     min-height: 100vh;
     display: flex;
@@ -230,6 +234,9 @@ h2, h3{
     justify-content: space-evenly;
     align-items: center;
     padding-top: 30px;
+}
+.landingPage-menu h3{
+    font-weight: bold;
 }
 @media screen and (max-width: 700px) {
     .hero-image {

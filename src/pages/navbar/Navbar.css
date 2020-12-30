@@ -12,13 +12,13 @@
 }
 .nav .brand{
     flex: 2;
-    font-family: 'Sail', cursive;
+    /* font-family: 'Sail', cursive;
     font-size: 1.7rem;
     text-decoration: none;
-    color: black;
+    color: black; */
 }
-.nav .brand span{
-    color: #ff8d23;
+.nav .brand img{
+    width: 30%;
 }
  .NavBar, .NavBar-mobile{
     height: 40px;

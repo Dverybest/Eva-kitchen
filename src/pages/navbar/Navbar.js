@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link, withRouter,useLocation } from 'react-router-dom'
+import Logo from './EvaKitchen.png'
 import './Navbar.css'
 
 const Navbar = () => {
@@ -18,7 +19,7 @@ const Navbar = () => {
 
     return (
         <nav className='nav'>
-            <a href='/' className='brand'>Eva <span>Kitchen</span></a>
+            <a href='/' className='brand'><img src={Logo} alt='' /></a>
             <button className='hamburger' onClick={handleClick}>
                 <i className='fa fa-bars'></i>
             </button>
