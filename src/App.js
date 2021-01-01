@@ -11,8 +11,6 @@ function App() {
         <Route exact path='/' component={LandingPage} />
         <Route exact path='/menu' component={MenuPage} />
       </Switch>  
-
-    
     </BrowserRouter>
   );
 }

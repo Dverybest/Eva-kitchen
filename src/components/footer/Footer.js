@@ -12,9 +12,9 @@ const Footer = () =>{
                 </div> 
                 <div className='footer-menu'>
                     <span className='title'>Menu</span>
-                    <li>Soup</li> 
-                    <li>Rice</li> 
-                    <li>Meat</li> 
+                    <li>Breakfast</li> 
+                    <li>Lunch</li> 
+                    <li>Dinner</li> 
                 </div> 
                 <div className='footer-about'>
                     <span className='title'>About Us</span>
@@ -25,8 +25,8 @@ const Footer = () =>{
                     <span className='title'>Opening Hours</span>
                     <p>Monday - Saturday</p>
                     <p>10:50am - 07:00pm</p>
-                    <p>Sunday</p>
-                    <p>11:00am - 08:00pm</p>
+                    {/* <p>Sunday</p>
+                    <p>11:00am - 08:00pm</p> */}
                 </div> 
                 <div className='footer-social'>
                     <span className='title'>Follow us on social media</span>
