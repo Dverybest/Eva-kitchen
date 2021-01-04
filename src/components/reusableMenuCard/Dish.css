@@ -1,11 +1,12 @@
 .dish{
     display: flex;
     flex-direction: column;
+    justify-self: center;
     justify-content: space-evenly;
     border: 1px solid transparent;
     border-radius: 30px;
     max-width: 351px;
-    min-height: 530px;
+    max-height: 530px;
     padding: 0px;
     margin-top: 50px;
     box-shadow: 0px 6px 60px rgba(0, 0, 0, 0.1);
@@ -66,9 +67,4 @@
     margin-bottom: 20px;
     border-style: none;
     align-self: center;
-}
-.menu-list{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
 }
