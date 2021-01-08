@@ -180,6 +180,16 @@
     color: #717171;
 }
 
+.landingPage-about-info button {
+    width: 30%;
+    background-color: #ff8d23;
+    color: white;
+    border-radius: 25px;
+    border-style: none;
+    padding: 10px;
+    margin-top: 30px;
+}
+
 .landingPage-ad {
     display: flex;
     justify-content: space-between;
@@ -220,6 +230,11 @@
     background-color: rgba(100, 81, 67, 0.05);
     padding-top: 30px;
 }
+.landingPage-order h3{
+    margin-top: -40px;
+    font-weight: bold;
+}
+
 
 .landingPage-menu {
     min-height: 100vh;
@@ -228,6 +243,9 @@
     justify-content: space-evenly;
     align-items: center;
     padding-top: 30px;
+}
+.landingPage-menu h3{
+    font-weight: bold;
 }
 
 @media screen and (max-width: 700px) {
