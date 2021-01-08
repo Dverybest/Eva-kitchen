@@ -12,10 +12,6 @@
 }
 .nav .brand{
     flex: 2;
-    /* font-family: 'Sail', cursive;
-    font-size: 1.7rem;
-    text-decoration: none;
-    color: black; */
 }
 .nav .brand img{
     width: 30%;
@@ -35,7 +31,6 @@
     color: black;
     text-decoration: #ff8d23;
     border-bottom: 1px solid transparent;
-
     font-family: 'Lato', sans-serif;
     font-style: normal;
     font-weight: 400;
