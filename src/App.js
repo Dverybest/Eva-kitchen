@@ -1,7 +1,8 @@
-import React from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import LandingPage from './pages/landingPage/LandingPage'
-import MenuPage from './pages/menuPage/MenuPage'
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import LandingPage from './pages/landingPage/LandingPage';
+import MenuPage from './pages/menuPage/MenuPage';
+import ContactPage from './pages/contactPage/ContactPage';
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Switch>
         <Route exact path='/' component={LandingPage} />
         <Route exact path='/menu' component={MenuPage} />
+        <Route exact path='/contact-us' component={ContactPage} />
       </Switch>  
     </BrowserRouter>
   );

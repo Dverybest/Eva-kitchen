@@ -14,7 +14,8 @@
     flex: 2;
 }
 .nav .brand img{
-    width: 30%;
+    max-height: 40px;
+    width: auto;
 }
  .NavBar, .NavBar-mobile{
     height: 40px;

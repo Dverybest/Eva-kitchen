@@ -98,9 +98,9 @@ const Navlink = () => {
                 </div>
             </div>
 
-            <section className='dish-menu2'>
+            <section className='container dish-menu2'>
                 {
-                    <div className='container '>
+                    <div className=' '>
                         <h3>Recommended Dishes</h3>
                         <div className='row px-0 mx-0'>
                             {
