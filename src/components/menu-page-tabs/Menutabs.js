@@ -1,5 +1,4 @@
 import React,{useState, useEffect} from 'react';
-import {withRouter, useLocation } from 'react-router-dom';
 import './Menutabs.css'
 import friedRice from '../../components/reusableMenuCard/dishImages/friedRice.png'
 import jollofRice from '../../components/reusableMenuCard/dishImages/jollofRice.png'
@@ -7,7 +6,7 @@ import egusiSoup from '../../components/reusableMenuCard/dishImages/egusiSoup.pn
 import oraSoup from '../../components/reusableMenuCard/dishImages/oraSoup.png'
 import whiteRice from '../../components/reusableMenuCard/dishImages/whiteRice.png'
 import okroSoup from '../../components/reusableMenuCard/dishImages/okroSoup.png'
-import Dish from '../../components/reusableMenuCard/Dish'
+import Dish from '../../components/reusableMenuCard/Dish';
 
 let DB = [
     {
@@ -54,7 +53,7 @@ let DB = [
     }
 ]
 
-const Navlink = () => {
+const MenuTab = () => {
     
     const categories = ['All', 'Breakfast', 'Lunch', 'Dinner'];
     const [selectedCategory, setSelectedCategory] = useState('All');
@@ -98,9 +97,9 @@ const Navlink = () => {
                 </div>
             </div>
 
-            <section className='dish-menu2'>
+            <section className='container dish-menu2'>
                 {
-                    <div className='container '>
+                    <div className=' '>
                         <h3>Recommended Dishes</h3>
                         <div className='row px-0 mx-0'>
                             {
@@ -119,4 +118,4 @@ const Navlink = () => {
     )
 }
 
-export default withRouter(Navlink);
+export default MenuTab;

@@ -1,0 +1,142 @@
+.contact {}
+
+.contact .header {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 50.52%, rgba(255, 251, 245, 0.3) 100%), url(./images/bg.png);
+    background-position: center;
+    background-size: cover;
+    padding-top: 70px;
+    display: flex;
+    align-items: center;
+    background-repeat: no-repeat;
+    height: 75vh;
+}
+
+.contact h1 {
+    font-family: 'Raleway';
+    font-weight: bold;
+    font-style: normal;
+    font-size: 60px;
+    margin-left: 50px;
+    line-height: 80px;
+    max-width: 600px;
+    color: white;
+    text-transform: capitalize;
+}
+
+.textBox {
+    margin: 0px 10px 20px;
+    flex: 1;
+}
+
+.textBox input, textarea {
+    background: #E9EAFF;
+    border-radius: 4;
+    outline: none;
+    border: none;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16.041px;
+    line-height: 32px;
+    padding: 10px;
+    width: 100%;
+}
+
+.textBox p {
+    margin: 0;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12.8328px;
+    line-height: 32px;
+    color: #000000;
+}
+
+.contact .sendMail {
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.sendMail .contactUs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sendMail .title {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22.4573px;
+    line-height: 32px;
+    color: #FF7913;
+}
+
+.contact .contact-form {
+    flex: 2;
+}
+
+.sendMail button {
+    color: white;
+    background-color: #ff8d23;
+    border-radius: 5px;
+    border-style: none;
+    height: 50px;
+    width: 250px;
+    flex: 1;
+    margin: 0px 10px 20px;
+    align-self: center;
+    justify-self: center;
+}
+
+.contact .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.contact-info {
+    max-width: 290px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 13px;
+    border: 1px solid transparent;
+    background-color: #F6EDEF;
+    box-shadow: 8.82458px 8.82458px 88.2458px 3.52983px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 50px 0px 50px;
+    padding: 10px 0px;
+}
+
+.contact-info p {
+    margin-bottom: 0px;
+    text-align: center;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    margin: 2px 0px;
+    text-transform: capitalize;
+    color: #717171;
+}
+
+.contact-info .mid_text {
+    color: #484848;
+}
+
+@media screen and (max-width: 700px) {
+    .contact h1 {
+        font-size: 40px;
+        line-height: 52px;
+        max-width: 350px;
+        margin: 20px;
+        margin-top: 0;
+    }
+    .sendMail .contactUs {
+        display: flex;
+        flex-direction: column;
+    }
+    .contact .info {
+        margin-left: 0px;
+    }
+}
