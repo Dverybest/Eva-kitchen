@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React from 'react';
 import Navbar from '../../components/navbar/Navbar';
 import MenuDishes from '../../components/menu-page-tabs/Menutabs'
 import './MenuPage.css';
