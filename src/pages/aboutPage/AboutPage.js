@@ -2,17 +2,11 @@ import React,{useState} from 'react';
 import Navbar from '../../components/navbar/Navbar';
 import '../menuPage/MenuPage.css';
 import '../landingPage/LandingPage.css';
-import './AboutPage.css'
+import './AboutPage.css';
 import Card from '../../components/reusableCard/Card';
 import pickMeals from '../landingPage/landingPageImages/pickMeals.svg';
 import fastDelivery from '../landingPage/landingPageImages/fastDelivery.svg';
 import checkout from '../landingPage/landingPageImages/checkout.svg';
-import friedRice from '../../components/reusableMenuCard/dishImages/friedRice.png'
-import jollofRice from '../../components/reusableMenuCard/dishImages/jollofRice.png'
-import egusiSoup from '../../components/reusableMenuCard/dishImages/egusiSoup.png'
-import oraSoup from '../../components/reusableMenuCard/dishImages/oraSoup.png'
-import whiteRice from '../../components/reusableMenuCard/dishImages/whiteRice.png'
-import okroSoup from '../../components/reusableMenuCard/dishImages/okroSoup.png'
 import AboutDish from './about dish.png'
 import ProfilePic from './profile-pic.png'
 import Footer from '../../components/footer/Footer';
