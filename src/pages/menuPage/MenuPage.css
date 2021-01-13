@@ -12,14 +12,18 @@
     padding-top: 100px;
     color: white;
 }
-
+.about-header{
+    background-image: url('../aboutPage/background.png');
+    min-height: 75vh;
+    background-position: bottom;
+}
 .menu-header h1 {
     font-family: 'Raleway';
     font-weight: bold;
     font-style: normal;
     font-size: 60px;
     line-height: 80px;
-    max-width: 600px;
+    max-width: 670px;
     text-transform: capitalize;
 }
 
