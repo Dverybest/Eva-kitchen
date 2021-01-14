@@ -1,0 +1,147 @@
+.about {
+    font-size: 16px;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #E5E5E5;
+}
+.about-order{
+    background-color: transparent;
+}
+.about h2 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 40px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #FF8D23;
+}
+
+.about .text_two {
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 42px;
+    line-height: 40px;
+    color: #000000;
+}
+.testimonial{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 50px;
+}
+.testimonial h2{
+    color: #B900B1;
+    
+   
+}
+
+.testimony-info{
+    display: flex;
+    margin-top: 70px;
+    width: 100%;
+    min-height: 300px;
+}
+
+.quote1, .quote2{
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 400px;
+    line-height: 40px;
+    color: rgba(0, 0, 0, 0.05);
+    font-style: oblique;
+   
+}
+.quote1{
+    flex: 1;
+    margin-top: 200px;
+}
+
+.shapes{
+    flex: 6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.rectangle{
+    max-height: 400px;
+    max-width: 500px;
+    background-color: #C4C4C4;
+    border-radius: 30px;
+    box-shadow: 0px 4px 44px rgba(255, 121, 19, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+.rectangle h5{
+    color: #FF8D23;
+}
+.triangle{
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+    background-color: transparent;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 50px solid #C4C4C4;
+    box-shadow: 0px 4px 44px rgba(255, 121, 19, 0.15);
+}
+
+.testimony-profile{
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+    width: 100%;
+    min-height: 300px;
+}
+.profilePic{
+    flex: 7;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.testimony-profile .profilePic img{
+   margin-right: 200px;
+}
+.quote2{
+    flex: 2;
+    margin-top: 300px;
+}
+@media screen and (max-width: 800px){
+    .about .text_two{
+        font-size: 18px;
+    }
+    .testimony-info, .testimony-profile{
+        flex-direction: column;
+       
+    }
+    .testimony-info{
+        margin-top: 0px;
+
+    }
+    .testimony-profile{
+        align-items: center;
+        margin-top: 20px;
+    }
+    .quote1, .quote2{
+        font-size: 300px;
+        line-height: 30px;
+    }
+    .quote1{
+        margin-bottom: 50px;
+    }
+    .quote2{
+        margin-top: 150px;
+        margin-left: 100px;
+       
+    }
+    .testimony-profile .profilePic img{
+        margin-right: 0px;
+     
+     }
+   
+}
