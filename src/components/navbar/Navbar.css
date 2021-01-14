@@ -44,9 +44,7 @@
     line-height: 22px;
     text-transform: capitalize;
 }
-.nav ul li:nth-child(odd){
-    background-color:  #F7F7F7;
-}
+
 .nav ul li a:hover {
     border-bottom: 1px solid #ff8d23;
 }
@@ -95,5 +93,8 @@
     }
     .NavBar-mobile li {
         margin-top: 15px;
+    }
+    .nav ul li:nth-child(odd){
+        background-color:  #F7F7F7;
     }
 }
