@@ -253,7 +253,7 @@
 }
 @media screen and (max-width: 900px){
     .landingPage-about-content {
-        padding: 30px 20px 0px 20px;
+        padding: 20px 90px 0px 20px;
     }
 }
 
@@ -323,9 +323,5 @@
         margin-left: 0%;
         /* padding: 0px; */
         height: 50px;
-    }
-    .menu-lists{
-        margin-right: 0px;
-        padding-right: 0px;
     }
 }
