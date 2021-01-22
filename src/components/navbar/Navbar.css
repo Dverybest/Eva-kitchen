@@ -86,14 +86,20 @@
         margin-left: 11%;
         top: 60px;
         right: 0;
-        padding-left: 30px;
+        padding-top: 150px;
         position: absolute;
         z-index: 2;
         background-color: white;
     }
     .NavBar-mobile li {
-        margin-top: 15px;
+        padding: 15px;
+        padding-left: 40px;
+       
     }
+    .nav ul li a{
+        font-size: 20px;
+    }
+   
     .nav ul li:nth-child(odd){
         background-color:  #F7F7F7;
     }

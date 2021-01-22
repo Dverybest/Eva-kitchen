@@ -4,7 +4,7 @@ import './Dish.css'
 
 const Dish = ({ image, name, price, description }) => {
     return (
-        <div className='col-md-4 px-0 mx-0'>
+        <div className='col-md-4 px-0 mx-0 '>
             <div className="dish">
                 <div className='dish-image '>
                     <div className='rating'>4.5</div>
