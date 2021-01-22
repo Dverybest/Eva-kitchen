@@ -143,7 +143,7 @@ const LandingPage = () => {
                 <h2>MENU</h2>
                 <p className="text_two">Choose from our most popular menu</p>
                 {
-                   <div className='container menu-lists'>
+                   <div className='container '>
                         <div className='row px-0 mx-0'>
                             {list.map((dish, index) => {
                                 return (
