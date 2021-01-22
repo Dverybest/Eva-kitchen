@@ -7,8 +7,8 @@ import Card from '../../components/reusableCard/Card';
 import pickMeals from '../landingPage/landingPageImages/pickMeals.svg';
 import fastDelivery from '../landingPage/landingPageImages/fastDelivery.svg';
 import checkout from '../landingPage/landingPageImages/checkout.svg';
-import AboutDish from './about dish.png'
-import ProfilePic from './profile-pic.png'
+import AboutDish from './about dish.svg'
+import ProfilePic from './prisca (2).jpg'
 import Footer from '../../components/footer/Footer';
 
 const AboutPage = () => {
@@ -43,7 +43,7 @@ const AboutPage = () => {
             <section className='landingPage-order about-order'>
                 <h2>ORDER AND DELIVERY</h2>
                 <p className="text_two">Our delivery service is top notch</p>
-                <div className='card-container'>
+                <div className='card-container order-info'>
                     {
                         data.map((item, index) => {
                             return (
@@ -74,7 +74,7 @@ const AboutPage = () => {
                     <span className='quote1'>"</span>
                     <div className='shapes'>
                         <div className='rectangle'>
-                            <p>This has been the best hotel I have ever been to. Their hospitality was top notch, their services was the best. Do patronize them.</p>
+                            <p>This has been the best online food delivery service I have ever experienced. They delivered at the right time and their dishes are exquisite. Do patronize them.</p>
                             <h5>Adefiwa George</h5>
                             <p>CEO Fiwa Groups</p>
                         </div>

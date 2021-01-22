@@ -2,11 +2,17 @@
     font-size: 16px;
     width: 100%;
     overflow-x: hidden;
+    background-color:  rgba(100, 81, 67, 0.05);
 }
 .about-order{
-    background-color: transparent;
+    /* background-color: transparent; */
     min-height: 80vh;
-    justify-content: flex-start;
+    justify-content:  space-between;
+    
+}
+.about-order h2{
+    margin-top: 30px;
+    margin-bottom: -50px;
 }
 .about h2 {
     font-family: 'Inter';
@@ -69,8 +75,8 @@
 .rectangle{
     max-height: 400px;
     max-width: 500px;
-    background-color: #C4C4C4;
     border-radius: 30px;
+    background-color: white;
     box-shadow: 0px 4px 44px rgba(255, 121, 19, 0.15);
     display: flex;
     flex-direction: column;
@@ -88,7 +94,7 @@
     background-color: transparent;
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
-    border-top: 50px solid #C4C4C4;
+    border-top: 50px solid white;
     box-shadow: 0px 4px 44px rgba(255, 121, 19, 0.15);
 }
 
@@ -106,13 +112,27 @@
     align-items: center;
 }
 .testimony-profile .profilePic img{
-   margin-right: 200px;
+    width: 150px;
+    object-fit: cover;
+    object-position: center;
+    height: 150px;
+    border-radius: 100px;
+    margin-right: 200px;
 }
 .quote2{
     flex: 2;
     margin-top: 300px;
 }
+@media screen and (max-width: 900px){
+    .about-order h2{
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+}
 @media screen and (max-width: 800px){
+    .about-header{
+        min-height: 60vh;
+    }
     .about .text_two{
         font-size: 18px;
     }
@@ -127,6 +147,12 @@
     .testimony-profile{
         align-items: center;
         margin-top: 20px;
+    }
+    .shapes{
+        padding: 20px;
+    }
+    .rectangle{
+        padding: 20px;
     }
     .quote1, .quote2{
         font-size: 300px;
@@ -144,5 +170,9 @@
         margin-right: 0px;
      
      }
+     .about-order h2{
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
    
 }

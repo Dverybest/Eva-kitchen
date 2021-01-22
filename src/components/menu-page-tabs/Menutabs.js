@@ -88,7 +88,7 @@ const MenuTab = () => {
             </ul>
 
             <div className='container dish-menu'>
-                <div className='row px-0 mx-0'>
+                <div className='row px-0 mx-0 dish-list'>
                     {list.map((dish, index) => {
                         return (
                             <Dish key={index} {...dish} />
@@ -101,7 +101,7 @@ const MenuTab = () => {
                 {
                     <div className=' '>
                         <h3>Recommended Dishes</h3>
-                        <div className='row px-0 mx-0'>
+                        <div className='row px-0 mx-0 dish-list'>
                             {
                                 DB.slice(3, 6).map((dish, index) => {
                                     return(
