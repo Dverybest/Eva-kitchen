@@ -15,10 +15,10 @@
     font-family: 'Raleway';
     font-weight: bold;
     font-style: normal;
-    font-size: 60px;
     margin-left: 50px;
-    line-height: 80px;
-    max-width: 600px;
+    font-size: 45px;
+    line-height: 60px;
+    max-width: 500px;
     color: white;
     text-transform: capitalize;
 }

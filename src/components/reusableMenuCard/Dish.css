@@ -2,12 +2,11 @@
 .dish {
     display: flex;
     flex-direction: column;
-    justify-self: center;
-    justify-content: space-evenly;
+   
     border: 1px solid transparent;
     border-radius: 30px;
-    min-width: 260px;
-    max-width: 351px;
+    min-width: 250px;
+    max-width: 350px;
     height: 400px;
     padding: 0px;
     margin-top: 50px;

@@ -1,8 +1,9 @@
 import React from 'react'
 import './Dish.css'
-
+import {useHistory} from 'react-router-dom';
 
 const Dish = ({ image, name, price, description }) => {
+    const history = useHistory();
     return (
         <div className='col-md-4 px-0 mx-0 '>
             <div className="dish">
@@ -15,7 +16,7 @@ const Dish = ({ image, name, price, description }) => {
                     <span> {price} </span>
                 </div>
                 <p> {description} </p>
-                <button>Order Now</button>
+                <button onClick={()=>history.push('/order')}>Order</button>
             </div>
         </div>
     )

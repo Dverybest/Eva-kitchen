@@ -12,7 +12,7 @@ let DB = [
     {
         image: friedRice,
         name: 'Fried Rice',
-        price: '₦1000',
+        price: '₦1,000',
         description: 'Fried rice with chicken laps',
         category: 'Breakfast'
     },
@@ -26,21 +26,21 @@ let DB = [
     {
         image: egusiSoup,
         name: 'Egusi Soup',
-        price: '₦1500',
+        price: '₦1,500',
         description: 'Egusi Soup with plenty meat',
         category: 'Lunch'
     },
     {
         image: oraSoup,
         name: 'Ora Soup',
-        price: '₦1500',
+        price: '₦1,500',
         description: 'Ora soup with fish and two beef and semo',
         category: 'Lunch'
     },
     {
         image: whiteRice,
         name: 'White Rice',
-        price: '₦1200',
+        price: '₦1,200',
         description: 'White rice and stew with chicken',
         category: 'Dinner'
     },
