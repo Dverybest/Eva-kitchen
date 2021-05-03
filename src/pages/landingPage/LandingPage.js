@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import {useHistory} from 'react-router-dom';
 import './LandingPage.css';
 import Dish1 from './landingPageImages/dish1.svg';
 import image1 from './landingPageImages/about image.svg';
@@ -17,7 +18,7 @@ import Card from '../../components/reusableCard/Card';
 import Footer from '../../components/footer/Footer';
 
 const LandingPage = () => {
-
+    const history = useHistory();
     const [data, setData] = useState([
         {
             img: pickMeals,
@@ -39,7 +40,7 @@ const LandingPage = () => {
         {
             image: friedRice,
             name: 'Fried Rice',
-            price: '₦1000',
+            price: '₦1,000',
             description: 'Fried rice with chicken laps'
         },
         {
@@ -51,25 +52,25 @@ const LandingPage = () => {
         {
             image: egusiSoup,
             name: 'Egusi Soup',
-            price: '₦1500',
+            price: '₦1,500',
             description: 'Egusi Soup with plenty meat'
         },
         {
             image: oraSoup,
             name: 'Ora Soup',
-            price: '₦1500',
+            price: '₦1,500',
             description: 'Ora soup with fish and two beef and semo'
         },
         {
             image: whiteRice,
             name: 'White Rice',
-            price: '₦1200',
+            price: '₦1,200',
             description: 'White rice and stew with chicken'
         },
         {
             image: okroSoup,
             name: 'Okro Soup',
-            price: '₦1000',
+            price: '₦1,000',
             description: 'Okro soup with plenty meat and fish'
         }
     ])
@@ -82,7 +83,9 @@ const LandingPage = () => {
                         <div className='hero-info '>
                             <h1>Your Favourite Food Delivered Hot And Fresh</h1>
                             <p>Satisfy your craving by getting the food you want delivered to you fast. EvaKitchen is now available in selected areas in Enugu.</p>
-                            <button className="button">Order Now<i className="fa fa-arrow-right" aria-hidden="true"></i></button>
+                            <button onClick={()=>{
+                                history.push('/menu')
+                            }} className="button">Order Now<i className="fa fa-arrow-right" aria-hidden="true"></i></button>
                         </div>
                         <div className='hero-image'>
                         <img src={Dish1} alt='' className='img-fluid' />
