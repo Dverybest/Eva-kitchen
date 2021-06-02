@@ -1,4 +1,6 @@
 import { createStore, applyMiddleware } from "redux";
+import  thunk from "redux-thunk";
+import { getStorage, setStorage } from "../utils/storage";
 import RootReducer from "./reducers/rootReducer";
 
 const Store = ()=>{
