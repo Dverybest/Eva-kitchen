@@ -5,11 +5,9 @@ import MenuPage from './pages/menuPage/MenuPage'
 import AboutPage from './pages/aboutPage/AboutPage'
 import ContactPage from './pages/contactPage/ContactPage';
 import { NotificationContainer } from "react-notifications";
-import { Provider } from 'react-redux'
 
 function App() {
   return (
-    <Provider>
       <BrowserRouter>   
         <Switch>
           <Route exact path='/' component={LandingPage} />
@@ -19,7 +17,6 @@ function App() {
         </Switch>  
         <NotificationContainer/>
       </BrowserRouter>
-    </Provider>
   );
 }
 

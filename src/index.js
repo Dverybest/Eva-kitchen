@@ -5,11 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'react-notifications/lib/notifications.css';
 import { NotificationContainer } from "react-notifications";
+import { Provider } from 'react-redux';
+import store from './reduxSetup/store';
 
 ReactDOM.render(
   <React.StrictMode>
-    <NotificationContainer/>
-    <App />
+    <Provider store = {store}>
+      <NotificationContainer/>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
