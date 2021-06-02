@@ -1,0 +1,1 @@
+export const POPULAR_MENU = 'POPULAR_MENU';
