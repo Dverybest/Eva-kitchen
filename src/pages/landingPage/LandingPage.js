@@ -21,7 +21,6 @@ import { connect } from "react-redux";
 import {popularMenuAction} from "../../reduxSetup/actions/popularMenuAction";
 
 const LandingPage = (props) => {
-    console.log(props.popularMenuAction, "herehereHere");
     const history = useHistory();
     useEffect(() => {
         props.popularMenuAction();
@@ -43,44 +42,6 @@ const LandingPage = (props) => {
             description: "Your order is processed and delivered within 10 ~ 15 minutes"
         }
     ]);
-    // const [list, setList] = useState([
-    //     {
-    //         image: friedRice,
-    //         name: 'Fried Rice',
-    //         price: '₦1,000',
-    //         description: 'Fried rice with chicken laps'
-    //     },
-    //     {
-    //         image: jollofRice,
-    //         name: 'Jellof Rice',
-    //         price: '₦800',
-    //         description: 'Nigerian party jellof'
-    //     },
-    //     {
-    //         image: egusiSoup,
-    //         name: 'Egusi Soup',
-    //         price: '₦1,500',
-    //         description: 'Egusi Soup with plenty meat'
-    //     },
-    //     {
-    //         image: oraSoup,
-    //         name: 'Ora Soup',
-    //         price: '₦1,500',
-    //         description: 'Ora soup with fish and two beef and semo'
-    //     },
-    //     {
-    //         image: whiteRice,
-    //         name: 'White Rice',
-    //         price: '₦1,200',
-    //         description: 'White rice and stew with chicken'
-    //     },
-    //     {
-    //         image: okroSoup,
-    //         name: 'Okro Soup',
-    //         price: '₦1,000',
-    //         description: 'Okro soup with plenty meat and fish'
-    //     }
-    // ])
 
     return (
         <div className='landingPage'>
@@ -171,7 +132,6 @@ const LandingPage = (props) => {
 }
 
 const mapStateToProps = (state)=>{
-    // console.log(popularMenu, 'looking for this');
     return{
         popularMenu: state.menu.popularMenu
     }

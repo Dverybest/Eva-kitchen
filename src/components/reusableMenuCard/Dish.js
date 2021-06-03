@@ -1,8 +1,6 @@
 import React from 'react'
 import './Dish.css'
 import {useHistory} from 'react-router-dom';
-// import { connect } from 'react-redux';
-// import popularMenuAction from "../../reduxSetup/actions/popularMenuAction";
 
 const Dish = ({ image, name, price, description }) => {
     const history = useHistory();
@@ -23,10 +21,4 @@ const Dish = ({ image, name, price, description }) => {
         </div>
     )
 }
-// const mapStateToProps = (state)=>{
-//     return{
-//         popularMenu: state.menu.popularMenu
-//     }
-// }
-// const connector = connect(mapStateToProps, {popularMenuAction})
 export default Dish;
