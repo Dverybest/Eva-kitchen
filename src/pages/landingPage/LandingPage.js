@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import './LandingPage.css';
 import Dish1 from './landingPageImages/dish1.svg';
@@ -16,9 +16,15 @@ import okroSoup from '../../components/reusableMenuCard/dishImages/okroSoup.png'
 import Dish from '../../components/reusableMenuCard/Dish'
 import Card from '../../components/reusableCard/Card';
 import Footer from '../../components/footer/Footer';
+import { connect } from "react-redux";
 
-const LandingPage = () => {
+import {popularMenuAction} from "../../reduxSetup/actions/popularMenuAction";
+
+const LandingPage = (props) => {
     const history = useHistory();
+    useEffect(() => {
+        props.popularMenuAction();
+    }, [])
     const [data, setData] = useState([
         {
             img: pickMeals,
@@ -36,44 +42,6 @@ const LandingPage = () => {
             description: "Your order is processed and delivered within 10 ~ 15 minutes"
         }
     ]);
-    const [list, setList] = useState([
-        {
-            image: friedRice,
-            name: 'Fried Rice',
-            price: '₦1,000',
-            description: 'Fried rice with chicken laps'
-        },
-        {
-            image: jollofRice,
-            name: 'Jellof Rice',
-            price: '₦800',
-            description: 'Nigerian party jellof'
-        },
-        {
-            image: egusiSoup,
-            name: 'Egusi Soup',
-            price: '₦1,500',
-            description: 'Egusi Soup with plenty meat'
-        },
-        {
-            image: oraSoup,
-            name: 'Ora Soup',
-            price: '₦1,500',
-            description: 'Ora soup with fish and two beef and semo'
-        },
-        {
-            image: whiteRice,
-            name: 'White Rice',
-            price: '₦1,200',
-            description: 'White rice and stew with chicken'
-        },
-        {
-            image: okroSoup,
-            name: 'Okro Soup',
-            price: '₦1,000',
-            description: 'Okro soup with plenty meat and fish'
-        }
-    ])
 
     return (
         <div className='landingPage'>
@@ -148,7 +116,7 @@ const LandingPage = () => {
                 {
                    <div className='container '>
                         <div className='row px-0 mx-0'>
-                            {list.map((dish, index) => {
+                            {props.popularMenu?.map((dish, index) => {
                                 return (
                                     <Dish key={index} {...dish} />
                                 )
@@ -163,4 +131,10 @@ const LandingPage = () => {
     )
 }
 
-export default LandingPage
+const mapStateToProps = (state)=>{
+    return{
+        popularMenu: state.menu.popularMenu
+    }
+}
+const connector = connect(mapStateToProps, {popularMenuAction})
+export default connector(LandingPage);

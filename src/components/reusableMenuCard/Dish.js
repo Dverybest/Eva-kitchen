@@ -21,5 +21,4 @@ const Dish = ({ image, name, price, description }) => {
         </div>
     )
 }
-
 export default Dish;
