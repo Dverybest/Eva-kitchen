@@ -133,7 +133,7 @@ const LandingPage = (props) => {
 
 const mapStateToProps = (state)=>{
     return{
-        popularMenu: state.menu.popularMenu
+        popularMenu: state.meals.popularMenu
     }
 }
 const connector = connect(mapStateToProps, {popularMenuAction})

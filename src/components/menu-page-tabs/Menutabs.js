@@ -148,7 +148,7 @@ const MenuTab = (props) => {
 };
 const mapStateToProps = (state) => {
   return {
-    specialMenu: state.specials.specialMenu,
+    specialMenu: state.meals.specialMenu,
   };
 };
 const connector = connect(mapStateToProps, { specialMenuAction });
