@@ -9,6 +9,7 @@ import okroSoup from "../../components/reusableMenuCard/dishImages/okroSoup.png"
 import Dish from "../../components/reusableMenuCard/Dish";
 import { connect } from "react-redux";
 import { specialMenuAction } from "../../reduxSetup/actions/specialMenuAction";
+import { menuCategoryAction } from "../../reduxSetup/actions/menuCategoryAction";
 
 let DB = [
   {
@@ -134,9 +135,7 @@ const MenuTab = (props) => {
             <div className="row px-0 mx-0">
               {
                 props.specialMenu?.map((dish, index) => {
-                  if(dish){
-                      return <Dish key={index} {...dish} />;
-                    }
+                    return <Dish key={index} {...dish} />;
                 })
               }
             </div>
@@ -149,7 +148,8 @@ const MenuTab = (props) => {
 const mapStateToProps = (state) => {
   return {
     specialMenu: state.meals.specialMenu,
+    menuCategory: state.meals.menuCategory
   };
 };
-const connector = connect(mapStateToProps, { specialMenuAction });
+const connector = connect(mapStateToProps, { specialMenuAction, menuCategoryAction });
 export default connector(MenuTab);
