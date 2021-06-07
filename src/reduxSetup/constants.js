@@ -1,1 +1,2 @@
 export const POPULAR_MENU = 'POPULAR_MENU';
+export const SPECIAL_MENU = "SPECIAL_MENU";
