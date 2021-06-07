@@ -1,25 +1,24 @@
 import { requestProcessor } from "../../URLs/requestProcessor";
-import { MENU_CATEGORY } from "../constants";
-const menuCategoryAction = (payload) => (dispatch) =>
+import { ALL_MENU } from "../constants";
+
+const getMenuAction = ( id) => (dispatch) =>
 new Promise(async(resolve, reject) => {
     try {
         const response = await requestProcessor ({
             method: 'GET',
-            url: '/categories',
+            url: id? `/menu?category=${id}`:'/menu' ,
             dispatch,  
         });
-        
         if (response.success) {
             dispatch({
-                type: MENU_CATEGORY,
+                type: ALL_MENU,
                 payload: response.data
             })
             resolve(response);
-            console.log(response, "here??");
         }
     } catch (error) {
         reject(error)
         
     }
 })
-export {menuCategoryAction};
+export {getMenuAction};
