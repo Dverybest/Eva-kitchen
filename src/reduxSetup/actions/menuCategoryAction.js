@@ -14,6 +14,7 @@ new Promise(async(resolve, reject) => {
                 payload: response.data
             })
             resolve(response);
+            console.log(response, "here??");
         }
     } catch (error) {
         reject(error)

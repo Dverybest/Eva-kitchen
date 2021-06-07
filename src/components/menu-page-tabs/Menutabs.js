@@ -75,6 +75,9 @@ const MenuTab = (props) => {
   useEffect(() => {
     props.specialMenuAction();
   }, []);
+  useEffect(() => {
+      props.menuCategoryAction();
+  }, []);
   const handleClick = (category) => {
     setSelectedCategory(category);
   };
@@ -96,11 +99,14 @@ const MenuTab = (props) => {
             className={` ${categories[1] === selectedCategory ? "active" : ""}`}
             onClick={() => handleClick("Breakfast")}
           >
-            {" "}
-            Breakfast{" "}
+            {props.menuCategory?.map((category, index)=>{
+               return (category?.name)
+            })
+                
+            }
           </button>{" "}
         </li>
-        <li>
+        {/* <li>
           <button
             className={` ${categories[2] === selectedCategory ? "active" : ""}`}
             onClick={() => handleClick("Lunch")}
@@ -117,7 +123,7 @@ const MenuTab = (props) => {
             {" "}
             Dinner{" "}
           </button>{" "}
-        </li>
+        </li> */}
       </ul>
 
       <div className="container dish-menu">
