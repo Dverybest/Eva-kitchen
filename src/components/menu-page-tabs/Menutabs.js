@@ -8,13 +8,7 @@ import { getMenuAction } from "../../reduxSetup/actions/allMenuAction";
 import Skeleton from "react-loading-skeleton";
 
 const MenuTab = (props) => {
-  // const [loader, setloader] = useState(
-  //     false
-  // )
   const [selectedCategory, setSelectedCategory] = useState("All");
-  useEffect(() => {
-    props.loadingAction();
-  }, []);
   useEffect(() => {
     props.specialMenuAction();
     props.menuCategoryAction();
@@ -65,9 +59,9 @@ const MenuTab = (props) => {
         {props.loading ? (
                 <div className="col-md-4">
                   <div className="dish">
-                    <div className="dish-image ">
-                      <Skeleton width={90} height={50} />
-                    </div>
+                    {/* <div className="dish-image "> */}
+                      <Skeleton width={'100%'} height={"50%"} />
+                    {/* </div> */}
                     <p>
                       <Skeleton />
                     </p>
@@ -90,11 +84,15 @@ const MenuTab = (props) => {
                 <div className="col-md-4">
                   <div className="dish">
                     <div className="dish-image ">
-                      <Skeleton width={90} height={50} />
+                      <Skeleton width={'100%'} height={200} style={{margin:"auto"}} />
                     </div>
-                    <p>
-                      <Skeleton />
+                    <h2 className="mt-4">
+                      <Skeleton/>
+                    </h2>
+                    <p className="text-left">
+                      <Skeleton count={3} />
                     </p>
+                    <button className="bg-light"><Skeleton/></button>
                   </div>
                 </div>
               ) : (
