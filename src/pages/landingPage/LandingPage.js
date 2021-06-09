@@ -136,13 +136,17 @@ const LandingPage = (props) => {
             <div className="row px-0 mx-0">
               {props.loading ? (
                 <div className="col-md-4">
-                  <div className="dish">
+                   <div className="dish">
                     <div className="dish-image ">
-                      <Skeleton width={90} height={50}/>
+                      <Skeleton width={'100%'} height={200} style={{margin:"auto"}} />
                     </div>
-                    <p>
-                        <Skeleton/>
+                    <h2 className="mt-4">
+                      <Skeleton/>
+                    </h2>
+                    <p className="text-left">
+                      <Skeleton count={3} />
                     </p>
+                    <button className="bg-light"><Skeleton/></button>
                   </div>
                 </div>
               ) : (
