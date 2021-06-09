@@ -1,4 +1,4 @@
-import { ALL_MENU, MENU_CATEGORY, POPULAR_MENU, SPECIAL_MENU } from "../constants";
+import { ALL_MENU, LOADING, MENU_CATEGORY, POPULAR_MENU, SPECIAL_MENU } from "../constants";
 const initialState = {popularMenu: null, specialMenu:null, menuCategory: [], allMenu:[],}
 export const menuReducer = (state = initialState, action) => {
     switch (action.type) {
