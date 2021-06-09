@@ -1,82 +1,31 @@
 import React, { useState, useEffect } from "react";
 import "./Menutabs.css";
-import friedRice from "../../components/reusableMenuCard/dishImages/friedRice.png";
-import jollofRice from "../../components/reusableMenuCard/dishImages/jollofRice.png";
-import egusiSoup from "../../components/reusableMenuCard/dishImages/egusiSoup.png";
-import oraSoup from "../../components/reusableMenuCard/dishImages/oraSoup.png";
-import whiteRice from "../../components/reusableMenuCard/dishImages/whiteRice.png";
-import okroSoup from "../../components/reusableMenuCard/dishImages/okroSoup.png";
 import Dish from "../../components/reusableMenuCard/Dish";
 import { connect } from "react-redux";
 import { specialMenuAction } from "../../reduxSetup/actions/specialMenuAction";
 import { menuCategoryAction } from "../../reduxSetup/actions/menuCategoryAction";
-
-let DB = [
-  {
-    image: friedRice,
-    name: "Fried Rice",
-    price: "₦1,000",
-    description: "Fried rice with chicken laps",
-    category: "Breakfast",
-  },
-  {
-    image: jollofRice,
-    name: "Jellof Rice",
-    price: "₦800",
-    description: "Nigerian party jellof",
-    category: "Breakfast",
-  },
-  {
-    image: egusiSoup,
-    name: "Egusi Soup",
-    price: "₦1,500",
-    description: "Egusi Soup with plenty meat",
-    category: "Lunch",
-  },
-  {
-    image: oraSoup,
-    name: "Ora Soup",
-    price: "₦1,500",
-    description: "Ora soup with fish and two beef and semo",
-    category: "Lunch",
-  },
-  {
-    image: whiteRice,
-    name: "White Rice",
-    price: "₦1,200",
-    description: "White rice and stew with chicken",
-    category: "Dinner",
-  },
-  {
-    image: okroSoup,
-    name: "Okro Soup",
-    price: "₦1000",
-    description: "Okro soup with plenty meat and fish",
-    category: "Dinner",
-  },
-];
+import { getMenuAction } from "../../reduxSetup/actions/allMenuAction";
 
 const MenuTab = (props) => {
-  const categories = ["All", "Breakfast", "Lunch", "Dinner"];
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [list, setList] = useState(DB);
 
-  useEffect(() => {
-    if (selectedCategory === "All") {
-      setList(DB);
-      return;
-    }
-
-    const newList = DB.filter((dish) => {
-      return dish.category === selectedCategory;
-    });
-    setList(newList);
-  }, [selectedCategory]);
   useEffect(() => {
     props.specialMenuAction();
+    props.menuCategoryAction();
   }, []);
-  const handleClick = (category) => {
-    setSelectedCategory(category);
+
+  useEffect(() => {
+    if (selectedCategory=== "All") {
+        props.allMenuAction();
+    }
+    else{
+        props.allMenuAction(selectedCategory);
+    }
+  }, [selectedCategory]);
+
+
+  const handleClick = (id) => {
+    setSelectedCategory(id);
   };
 
   return (
@@ -84,45 +33,30 @@ const MenuTab = (props) => {
       <ul className="menu-categories container">
         <li>
           <button
-            className={` ${categories[0] === selectedCategory ? "active" : ""}`}
+            className={` ${"All" === selectedCategory ? "active" : ""}`}
             onClick={() => handleClick("All")}
           >
-            {" "}
-            All{" "}
-          </button>{" "}
+            All
+          </button>
         </li>
-        <li>
-          <button
-            className={` ${categories[1] === selectedCategory ? "active" : ""}`}
-            onClick={() => handleClick("Breakfast")}
-          >
-            {" "}
-            Breakfast{" "}
-          </button>{" "}
-        </li>
-        <li>
-          <button
-            className={` ${categories[2] === selectedCategory ? "active" : ""}`}
-            onClick={() => handleClick("Lunch")}
-          >
-            {" "}
-            Lunch{" "}
-          </button>{" "}
-        </li>
-        <li>
-          <button
-            className={` ${categories[3] === selectedCategory ? "active" : ""}`}
-            onClick={() => handleClick("Dinner")}
-          >
-            {" "}
-            Dinner{" "}
-          </button>{" "}
-        </li>
+
+        {props.menuCategory?.map((category, index) => {
+          return (
+            <li key={index}>
+              <button
+                className={` ${category._id === selectedCategory ? "active" : ""}`}
+                onClick={() => handleClick(category._id)} 
+              >
+                {category.name}
+              </button>
+            </li>
+          );
+        })}
       </ul>
 
       <div className="container dish-menu">
         <div className="row px-0 mx-0">
-          {list.map((dish, index) => {
+          {props.allMenu?.docs?.map((dish, index) => {
             return <Dish key={index} {...dish} />;
           })}
         </div>
@@ -133,11 +67,9 @@ const MenuTab = (props) => {
           <div className=" ">
             <h3>Recommended Dishes</h3>
             <div className="row px-0 mx-0">
-              {
-                props.specialMenu?.map((dish, index) => {
-                    return <Dish key={index} {...dish} />;
-                })
-              }
+              {props.specialMenu?.map((dish, index) => {
+                return <Dish key={index} {...dish} />;
+              })}
             </div>
           </div>
         }
@@ -146,10 +78,16 @@ const MenuTab = (props) => {
   );
 };
 const mapStateToProps = (state) => {
+  console.log(state.meals.allMenu, "dfku");
   return {
     specialMenu: state.meals.specialMenu,
-    menuCategory: state.meals.menuCategory
+    menuCategory: state.meals.menuCategory,
+    allMenu: state.meals.allMenu,
   };
 };
-const connector = connect(mapStateToProps, { specialMenuAction, menuCategoryAction });
+const connector = connect(mapStateToProps, {
+  specialMenuAction,
+  menuCategoryAction,
+  getMenuAction,
+});
 export default connector(MenuTab);
