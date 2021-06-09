@@ -150,7 +150,7 @@ const LandingPage = (props) => {
                   </div>
                 </div>
               ) : (
-                props.popularMenu?.map((dish, index) => {
+                props.popularMenu?.slice(6).map((dish, index) => {
                   return <Dish key={index} {...dish} />;
                 })
               )}
@@ -165,7 +165,6 @@ const LandingPage = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state.loader.loading, "ughhhh");
   return {
     popularMenu: state.meals.popularMenu,
     loading: state.loader.loading,
