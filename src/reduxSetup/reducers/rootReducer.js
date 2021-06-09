@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
-import { menuReducer } from "./popularMenuReducer";
+import { menuReducer } from "./menuReducer";
+
 const RootReducer = combineReducers ({
     meals: menuReducer,
-    // specials: menuReducer
 })
 export default RootReducer;
