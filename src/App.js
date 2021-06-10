@@ -5,6 +5,7 @@ import MenuPage from './pages/menuPage/MenuPage'
 import AboutPage from './pages/aboutPage/AboutPage'
 import ContactPage from './pages/contactPage/ContactPage';
 import { NotificationContainer } from "react-notifications";
+import OrderPage from './pages/orderPage/OrderPage'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route exact path='/menu' component={MenuPage} />
           <Route exact path='/about' component={AboutPage} />
           <Route exact path='/contact-us' component={ContactPage} />
+          <Route exact path='/order' component={OrderPage}/>
         </Switch>  
         <NotificationContainer/>
       </BrowserRouter>
