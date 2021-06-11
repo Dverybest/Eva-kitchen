@@ -6,6 +6,7 @@ import { specialMenuAction } from "../../reduxSetup/actions/specialMenuAction";
 import { menuCategoryAction } from "../../reduxSetup/actions/menuCategoryAction";
 import { getMenuAction } from "../../reduxSetup/actions/allMenuAction";
 import Skeleton from "react-loading-skeleton";
+import SkeletonDish from "../reusableMenuCard/skeletonDish";
 
 const MenuTab = (props) => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -38,7 +39,13 @@ const MenuTab = (props) => {
           </button>
         </li>
 
-        {props.menuCategory?.map((category, index) => {
+        {props.loading?(
+          <>
+          <SkeletonDish />
+          <SkeletonDish/>
+          <SkeletonDish/>
+        </>):
+        (props.menuCategory?.map((category, index) => {
           return (
             <li key={index}>
               <button
@@ -51,26 +58,18 @@ const MenuTab = (props) => {
               </button>
             </li>
           );
-        })}
+        }))
+      }
       </ul>
 
       <div className="container dish-menu">
         <div className="row px-0 mx-0">
         {props.loading ? (
-                <div className="col-md-4">
-                   <div className="dish">
-                    <div className="dish-image ">
-                      <Skeleton width={'100%'} height={200} style={{margin:"auto"}} />
-                    </div>
-                    <h2 className="mt-4">
-                      <Skeleton/>
-                    </h2>
-                    <p className="text-left">
-                      <Skeleton count={3} />
-                    </p>
-                    <button className="bg-light"><Skeleton/></button>
-                  </div>
-                </div>
+                <>
+                <SkeletonDish/>
+                <SkeletonDish/>
+                <SkeletonDish/>
+              </>
               ) : (
                 props.allMenu?.docs?.map((dish, index) => {
                   return <Dish key={index} {...dish} />;
@@ -85,20 +84,11 @@ const MenuTab = (props) => {
             <h3>Recommended Dishes</h3>
             <div className="row px-0 mx-0">
               {props.loading ? (
-                <div className="col-md-4">
-                  <div className="dish">
-                    <div className="dish-image ">
-                      <Skeleton width={'100%'} height={200} style={{margin:"auto"}} />
-                    </div>
-                    <h2 className="mt-4">
-                      <Skeleton/>
-                    </h2>
-                    <p className="text-left">
-                      <Skeleton count={3} />
-                    </p>
-                    <button className="bg-light"><Skeleton/></button>
-                  </div>
-                </div>
+                <>
+                    <SkeletonDish />
+                    <SkeletonDish/>
+                    <SkeletonDish/>
+                  </>
               ) : (
                 props.specialMenu?.map((dish, index) => {
                   return <Dish key={index} {...dish} />;
