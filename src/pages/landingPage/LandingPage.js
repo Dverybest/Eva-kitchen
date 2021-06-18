@@ -17,6 +17,7 @@ import { popularMenuAction } from "../../reduxSetup/actions/popularMenuAction";
 
 const LandingPage = (props) => {
   const history = useHistory();
+  // const mealDetails
   useEffect(() => {
     props.popularMenuAction();
   }, []);
