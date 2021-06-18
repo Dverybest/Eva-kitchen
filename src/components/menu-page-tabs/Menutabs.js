@@ -72,7 +72,7 @@ const MenuTab = (props) => {
                   </div>
                 </div>
               ) : (
-                props.allMenu?.docs?.map((dish, index) => {
+                props.allMenu?.map((dish, index) => {
                   return <Dish key={index} {...dish} />;
                 })
               )}
