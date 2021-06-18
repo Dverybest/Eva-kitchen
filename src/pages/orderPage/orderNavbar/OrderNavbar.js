@@ -6,7 +6,6 @@ import Logo from './EvaKitchen.png'
 import './OrderNavbar.css'
 
 const HeaderNavbar = (props) => {
-    console.log(props, "nav Props");
     const [className, setClassName] = useState('NavBar');
     const location = useLocation();
     const paths = ['/', '/menu', '/about','/contact-us'];
@@ -39,7 +38,6 @@ const HeaderNavbar = (props) => {
     )
 }
 const mapStateToProps = (state)=>{
-    console.log(state.addItem.cartCount, "jdhhksd");
     return{
         addToCart: state.addItem.addToCart,
         cartCount: state.addItem.cartCount
