@@ -17,7 +17,9 @@ const Dish = ({ image, name, price, description}) => {
           <span> {price} </span>
         </div>
         <p> {description} </p>
-        <button onClick={() => history.push("/order")}>Order</button>
+        <button onClick={() => {
+          history.push({pathname:"/order", state:{name, image, price, description}})
+        }}>Order</button>
       </div>
     </div>
   );
