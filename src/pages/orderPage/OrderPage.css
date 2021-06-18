@@ -41,6 +41,13 @@
     line-height: 45px;
     text-transform: capitalize;
 }
+.starColourOrange{
+    color: #ff7913;
+}
+/* .starColourWhite{
+    color: white;
+    border-color: black;
+} */
 .dishName{
     font-family: 'Open Sans';
     font-style: normal;
@@ -63,4 +70,58 @@
     font-size: 12px;
     line-height: 20px;
     color: rgba(0, 0, 0, 0.6);
+}
+.mealImage{
+    object-fit: contain;
+    width: 430px;    
+}
+.mealImg{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* media queries */
+@media screen and (max-width: 1200px) {
+    .mealImage{
+        width: 400px;
+    }
+    
+}
+@media screen and (max-width: 1024px) {
+    .mealImage{
+        width: 360px;
+    }
+    .mealDetails{
+        /* margin-left: 1em; */
+    } 
+}
+@media screen and (max-width: 991px) {
+    .mealImage{
+        width: 330px;
+    }
+    .mealDetails{
+        margin-left: 3em;
+    } 
+}
+@media screen and (max-width: 768px) {
+    /* .mealDetails {
+        width: 3em;
+    } */
+    .mealImage{
+        width: 320px;
+    }    
+}
+@media screen and (max-width: 767px) {
+    .mealImage{
+        width: auto;
+    }
+    .mealDetails{
+        margin-left: 0px;
+        margin-top: 2em;
+    }
+    .orderSection{
+        padding: 0 !important;
+        text-align: center;
+    }
 }
