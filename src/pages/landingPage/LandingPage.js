@@ -10,10 +10,10 @@ import checkout from "./landingPageImages/checkout.svg";
 import Dish from "../../components/reusableMenuCard/Dish";
 import Card from "../../components/reusableCard/Card";
 import Footer from "../../components/footer/Footer";
-import Skeleton from "react-loading-skeleton";
 import { connect } from "react-redux";
 
 import { popularMenuAction } from "../../reduxSetup/actions/popularMenuAction";
+import SkeletonDish from "../../components/reusableMenuCard/skeletonDish";
 
 const LandingPage = (props) => {
   const history = useHistory();
@@ -135,23 +135,14 @@ const LandingPage = (props) => {
         {
           <div className="container ">
             <div className="row px-0 mx-0">
-              {props.loading ? (
-                <div className="col-md-4">
-                   <div className="dish">
-                    <div className="dish-image ">
-                      <Skeleton width={'100%'} height={200} style={{margin:"auto"}} />
-                    </div>
-                    <h2 className="mt-4">
-                      <Skeleton/>
-                    </h2>
-                    <p className="text-left">
-                      <Skeleton count={3} />
-                    </p>
-                    <button className="bg-light"><Skeleton/></button>
-                  </div>
-                </div>
+              {props.loading? (      
+                  <>
+                    <SkeletonDish />
+                    <SkeletonDish/>
+                    <SkeletonDish/>
+                  </>
               ) : (
-                props.popularMenu?.slice(6).map((dish, index) => {
+                props.popularMenu?.slice(0, 6).map((dish, index) => {
                   return <Dish key={index} {...dish} />;
                 })
               )}

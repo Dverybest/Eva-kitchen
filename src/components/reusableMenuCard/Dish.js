@@ -10,7 +10,7 @@ const Dish = ({ image, name, price, description}) => {
       <div className="dish">
         <div className="dish-image ">
           <div className="rating">4.5</div>
-          <img src={image} alt="" />
+          <img className="dish-img" src={image} alt="" />
         </div>
         <div className="dish-info">
           <h5>{name}</h5>
