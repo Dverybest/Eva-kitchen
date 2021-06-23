@@ -13,8 +13,11 @@ const OrderPage = (props)=> {
     const [quantity, setquantity] = useState(
         0
     )
-    const addItemToCart =()=>{
+    const addItemToCart =(e)=>{
+        e.preventDefault();
         props.addToCartAction({...meal, quantity});
+        setquantity( 0)
+
     }
     const handleIncrement=()=>{
         setquantity(quantity + 1);
@@ -25,7 +28,9 @@ const OrderPage = (props)=> {
         }
         setquantity(quantity - 1);
     }
-    
+    // const refreshComponent = ()=>{
+    //     window.location.reload();
+    // }
     useEffect(() => {
         props.getMenuAction();        
     }, []);
@@ -53,7 +58,7 @@ const OrderPage = (props)=> {
                                 </div>
                                 <h6 className="mealName">{meal.name}</h6>
                                 <p className='description'>{meal.description}</p>
-                                <h6 className="priceTotal">{meal.price}</h6>
+                                <h6 className="priceTotal">{meal.price * quantity}</h6>
                                 <div className="my-3">
                                     <span className="starColourOrange"><i class="fa fa-star" aria-hidden="true"></i></span>
                                     <span className="starColourOrange"><i class="fa fa-star" aria-hidden="true"></i></span>
