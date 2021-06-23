@@ -17,6 +17,7 @@ import SkeletonDish from "../../components/reusableMenuCard/skeletonDish";
 
 const LandingPage = (props) => {
   const history = useHistory();
+  // const mealDetails
   useEffect(() => {
     props.popularMenuAction();
   }, []);

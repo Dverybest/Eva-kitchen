@@ -3,7 +3,9 @@ import "./Dish.css";
 import { useHistory } from "react-router-dom";
 
 const Dish = ({ image, name, price, description}) => {
-
+  const scrollToTop =()=>{
+    window.scrollTo(0,0)
+  }
   const history = useHistory();
   return (
     <div className="col-md-4 px-0 mx-0 ">
@@ -17,7 +19,10 @@ const Dish = ({ image, name, price, description}) => {
           <span> {price} </span>
         </div>
         <p> {description} </p>
-        <button onClick={() => history.push("/order")}>Order</button>
+        <button onClick={() => {
+          history.push({pathname:"/order", state:{name, image, price, description}});
+          scrollToTop();
+        }}>Order</button>
       </div>
     </div>
   );
