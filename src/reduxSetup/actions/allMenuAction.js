@@ -15,7 +15,7 @@ new Promise(async(resolve, reject) => {
             dispatch(loadingAction(false));
             dispatch({
                 type: ALL_MENU,
-                payload: response.data
+                payload: response.data.docs
             })
             resolve(response);
         }
