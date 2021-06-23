@@ -1,6 +1,6 @@
 import { ADD_TO_CART, ITEMS_IN_CART } from "../constants";
 const addToCartAction = (payload)=>(dispatch, state)=>{
-    
+    console.log(payload, "payload of additem");
     let orderQuantity = 0
     const itemInCart = state().addItem.addToCart
     const ItemsToAdd = [...itemInCart, payload]
