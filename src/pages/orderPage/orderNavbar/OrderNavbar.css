@@ -65,11 +65,16 @@
     border-radius: 50%;
     position: absolute;
     bottom: 15px;
-    width: 13px;
+    margin: auto;
+    font-size: 10px;
+    width: 17px;
     text-align: center;
-    height: 16px;
+    display: flex;
+    height: 17px;
     color: white;
     left: 14px;
+    align-items: center;
+    justify-content: center;
 }
 
 @media screen and (max-width: 700px) {
