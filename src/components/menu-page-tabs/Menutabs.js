@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import { specialMenuAction } from "../../reduxSetup/actions/specialMenuAction";
 import { menuCategoryAction } from "../../reduxSetup/actions/menuCategoryAction";
 import { getMenuAction } from "../../reduxSetup/actions/allMenuAction";
-import Skeleton from "react-loading-skeleton";
 import SkeletonDish from "../reusableMenuCard/skeletonDish";
 
 const MenuTab = (props) => {
