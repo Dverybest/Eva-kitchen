@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Footer  from "../../components/footer/Footer";
-import HeaderNavbar from "./orderNavbar/OrderNavbar";
+import Navbar from '../../components/navbar/Navbar';
 import './OrderPage.css';
 import { connect } from 'react-redux';
 import {getMenuAction} from "../../reduxSetup/actions/allMenuAction";
@@ -11,9 +11,7 @@ import Dish from '../../components/reusableMenuCard/Dish';
 const OrderPage = (props)=> {
     let formatPrice =  new Intl.NumberFormat() 
     const meal = props.location.state;        
-    const [quantity, setquantity] = useState(
-        0
-    )
+    const [quantity, setquantity] = useState(0)
     const addItemToCart =(e)=>{
         e.preventDefault();
         props.addToCartAction({...meal, quantity});
@@ -36,7 +34,7 @@ const OrderPage = (props)=> {
     return (
         <div>
             <div>
-                <HeaderNavbar/>
+                <Navbar/>
                <span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span> 
             </div>
             <section className="orderSection p-5 mt-3">
