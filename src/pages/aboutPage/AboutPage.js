@@ -34,14 +34,14 @@ const AboutPage = () => {
     return (
         <div className='about'>
             <Navbar />
-            <section className='menu-header about-header'>
+            {/* <section className='menu-header about-header'>
                 <h1>
                     Welcome to Evakitchen where your satisfaction is our goal
                 </h1>
-            </section>
+            </section> */}
 
-            <section className='landingPage-order about-order'>
-                <h2>ORDER AND DELIVERY</h2>
+            <section className='landingPage-order pt-5 about-order'>
+                <h2 className="">ORDER AND DELIVERY</h2>
                 <p className="text_two">Our delivery service is top notch</p>
                 <div className='card-container order-info'>
                     {
