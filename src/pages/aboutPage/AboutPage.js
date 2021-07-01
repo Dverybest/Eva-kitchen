@@ -40,7 +40,7 @@ const AboutPage = () => {
                 </h1>
             </section> */}
 
-            <section className='landingPage-order pt-5 about-order'>
+            <section className='landingPage-order pt-5 mt-3 about-order'>
                 <h2 className="">ORDER AND DELIVERY</h2>
                 <p className="text_two">Our delivery service is top notch</p>
                 <div className='card-container order-info'>
