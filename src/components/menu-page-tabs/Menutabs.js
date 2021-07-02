@@ -7,6 +7,7 @@ import { menuCategoryAction } from "../../reduxSetup/actions/menuCategoryAction"
 import { getMenuAction } from "../../reduxSetup/actions/allMenuAction";
 import Skeleton from "react-loading-skeleton";
 import SkeletonDish from "../reusableMenuCard/skeletonDish";
+import empty from '../../assets/empty.svg';
 
 const MenuTab = (props) => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -29,7 +30,7 @@ const MenuTab = (props) => {
 
   return (
     <div className="menu-nav">
-      <ul className="menu-categories container">
+      <ul className="menu-categories">
         <li>
           <button
             className={` ${"All" === selectedCategory ? "active" : ""}`}
@@ -39,42 +40,53 @@ const MenuTab = (props) => {
           </button>
         </li>
 
-        {props.loading?(
+        {!props.menuCategory.length && props.loading ? (
           <>
-          <SkeletonDish />
-          <SkeletonDish/>
-          <SkeletonDish/>
-        </>):
-        (props.menuCategory?.map((category, index) => {
-          return (
-            <li key={index}>
-              <button
-                className={` ${
-                  category._id === selectedCategory ? "active" : ""
-                }`}
-                onClick={() => handleClick(category._id)}
-              >
-                {category.name}
-              </button>
-            </li>
-          );
-        }))
-      }
+            <li ><Skeleton width={100} /></li>
+            <li ><Skeleton width={150} /></li>
+          </>) :
+          (props.menuCategory?.map((category, index) => {
+            return (
+              <li key={index}>
+                <button
+                  className={` ${category._id === selectedCategory ? "active" : ""
+                    }`}
+                  onClick={() => handleClick(category._id)}
+                >
+                  {category.name}
+                </button>
+              </li>
+            );
+          }))
+        }
       </ul>
 
       <div className="container dish-menu">
         <div className="row px-0 mx-0">
-        {props.loading ? (
-                <>
-                <SkeletonDish/>
-                <SkeletonDish/>
-                <SkeletonDish/>
-              </>
-              ) : (
+          {props.loading ? (
+            <>
+              <SkeletonDish />
+              <SkeletonDish />
+              <SkeletonDish />
+            </>
+          ) : (
+            <>
+              {
                 props.allMenu?.map((dish, index) => {
                   return <Dish key={index} {...dish} />;
                 })
-              )}
+
+              }
+              {
+                props.allMenu.length===0?(
+                  <div className='empty-container'>
+                    <img src={empty}/>
+                    <p>Nothing to show</p>
+                  </div>
+                ):null
+              }
+            </>
+          )}
         </div>
       </div>
 
@@ -85,10 +97,10 @@ const MenuTab = (props) => {
             <div className="row px-0 mx-0">
               {props.loading ? (
                 <>
-                    <SkeletonDish />
-                    <SkeletonDish/>
-                    <SkeletonDish/>
-                  </>
+                  <SkeletonDish />
+                  <SkeletonDish />
+                  <SkeletonDish />
+                </>
               ) : (
                 props.specialMenu?.map((dish, index) => {
                   return <Dish key={index} {...dish} />;

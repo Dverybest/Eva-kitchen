@@ -9,14 +9,16 @@
 
 .menu-categories {
     display: flex;
-    justify-content: space-evenly;
-    align-self: center;
+    width: 100%;
+    overflow-x: auto;
     margin-bottom: 0px;
     padding: 0px;
 }
 
 .menu-categories li {
     list-style-type: none;
+    white-space: nowrap;
+    padding: 0px 5px;
 }
 
 .menu-categories li button {
@@ -24,6 +26,7 @@
     text-decoration: #ff8d23;
     border-style: none;
     outline: none;
+    word-wrap:normal;
     border-bottom: 1px solid transparent;
     font-family: 'Lato', sans-serif;
     font-style: normal;
@@ -31,10 +34,27 @@
     font-size: 18px;
     background-color: transparent;
 }
-
-.menu-categories li button:hover {
-    border-bottom: 1px solid #ff8d23;
+.empty-container{
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    width: 100%;
 }
+.empty-container img{
+    max-height: 250px;
+    width: auto;
+}
+.empty-container p{
+    text-align: center;
+    margin: 20px;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+}
+/* .menu-categories li button:hover {
+    border-bottom: 1px solid #ff8d23;
+} */
 
 .menu-categories .active {
     border-bottom: 2px solid #ff8d23;
