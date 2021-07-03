@@ -87,11 +87,17 @@
 }
 @media screen and (min-width: 995px) and (max-width: 1200px){
     .dish{
-        max-width: 90%;
+        max-width: 92%;
     }
 } 
 @media screen and (min-width: 750px) and (max-width: 994px){
     .dish{
-        max-width: 80%;
+        max-width: 85%;
     }
 } 
+
+@media screen and (max-width: 360px) {
+    .dish {
+        max-width: 300px;
+    }
+}

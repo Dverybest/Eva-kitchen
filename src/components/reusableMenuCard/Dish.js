@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./Dish.css";
 import { useHistory } from "react-router-dom";
 
@@ -10,7 +10,7 @@ const Dish = ({ image, name, price, rating, description}) => {
   const history = useHistory();
   return (
     <>
-      <div className="col-sm-4 d-md-none d-lg-block px-0 mx-0 ">
+      <div className="col-sm-4 d-md-none d-lg-flex px-0 mx-0 d-flex justify-content-center">
         <div className="dish">
           <div className="dish-image ">
             <div className="rating">{rating}</div>
@@ -27,7 +27,7 @@ const Dish = ({ image, name, price, rating, description}) => {
           }}>Order</button>
         </div>
       </div>
-      <div className="col-md-6 d-none d-md-block d-lg-none  px-0 mx-0 ">
+      <div className="col-md-6 d-none d-md-flex d-lg-none  px-0 mx-0 d-flex justify-content-center">
         <div className="dish">
           <div className="dish-image ">
             <div className="rating">{rating}</div>
