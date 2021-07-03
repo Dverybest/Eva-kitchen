@@ -82,7 +82,7 @@ const MenuPage = (props) => {
 
                 </div>
             </setion>
-            <section className=" dish-menu2">
+            <section className="container dish-menu2">
                 {
                     <div className="">
                         <h3>Recommended Dishes</h3>
