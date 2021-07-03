@@ -4,7 +4,6 @@ import MenuTabs from '../../components/menu-page-tabs/Menutabs'
 import './MenuPage.css';
 import Footer from '../../components/footer/Footer';
 import { specialMenuAction } from "../../reduxSetup/actions/specialMenuAction";
-import { menuCategoryAction } from "../../reduxSetup/actions/menuCategoryAction";
 import { getMenuAction } from "../../reduxSetup/actions/allMenuAction";
 import SkeletonDish from '../../components/reusableMenuCard/skeletonDish';
 import empty from '../../assets/empty.svg';
@@ -117,14 +116,12 @@ const mapStateToProps = (state) => {
     const { meals, loader } = state;
     return {
         specialMenu: meals.specialMenu,
-        menuCategory: meals.menuCategory,
         selectedMenuList: Array.isArray(meals.allMenu) ? meals.allMenu : [],
         isLoading: loader.loading,
     };
 };
 const connector = connect(mapStateToProps, {
     specialMenuAction,
-    menuCategoryAction,
     getMenuAction,
 });
 export default connector(MenuPage)
