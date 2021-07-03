@@ -76,9 +76,9 @@ const MenuPage = (props) => {
                 </div>
                 <div className='d-flex justify-content-center my-5 align-items-center paginate'>
 
-                    <button className='btn mx-5'><i className="fa fa-angle-left" aria-hidden="true"></i></button>
+                    <button className='btn mx-4'><i className="fa fa-angle-left" aria-hidden="true"></i></button>
                     <span>Page 1 / 1 </span>
-                    <button className='btn mx-5'><i className="fa fa-angle-right" aria-hidden="true"></i></button>
+                    <button className='btn mx-4'><i className="fa fa-angle-right" aria-hidden="true"></i></button>
 
                 </div>
             </setion>
@@ -103,9 +103,9 @@ const MenuPage = (props) => {
                 }
                 <div className='d-flex justify-content-center my-5 align-items-center paginate'>
 
-                    <button className='btn mx-5'><i className="fa fa-angle-left" aria-hidden="true"></i></button>
+                    <button className='btn mx-4'><i className="fa fa-angle-left" aria-hidden="true"></i></button>
                     <span> 1 / 1 </span>
-                    <button className='btn mx-5'><i className="fa fa-angle-right" aria-hidden="true"></i></button>
+                    <button className='btn mx-4'><i className="fa fa-angle-right" aria-hidden="true"></i></button>
 
                 </div>
             </section>
