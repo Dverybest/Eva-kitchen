@@ -31,7 +31,8 @@
 .search{
     border: 1px solid black;
     border-radius: 4px;
-    padding: 5px 10px;
+    padding:8px 10px;
+    font-family: 'Lato';
     flex: 1;
     display: flex;
 }
@@ -43,6 +44,7 @@
 .search input{
     padding-left: 10px;
     border: none;
+    font-size: 14px;
     flex: 1;
 }
 .search input:focus{
