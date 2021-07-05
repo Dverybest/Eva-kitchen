@@ -21,7 +21,9 @@ const MenuPage = (props) => {
 
     useEffect(() => {
         if (selectedCategory === "All") {
-            props.getMenuAction();
+            props.getMenuAction().catch(err => {
+
+            });
         } else {
             props.getMenuAction(selectedCategory);
         }
@@ -115,13 +117,10 @@ const MenuPage = (props) => {
 const mapStateToProps = (state) => {
     const { meals, loader } = state;
     return {
-        specialMenu: meals.specialMenu,
+        specialMenu: Array.isArray(meals.specialMenu) ? meals.specialMenu : [],
         selectedMenuList: Array.isArray(meals.allMenu) ? meals.allMenu : [],
         isLoading: loader.loading,
     };
 };
-const connector = connect(mapStateToProps, {
-    specialMenuAction,
-    getMenuAction,
-});
-export default connector(MenuPage)
+
+export default connect(mapStateToProps, {specialMenuAction,getMenuAction})(MenuPage)
