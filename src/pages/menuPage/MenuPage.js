@@ -3,29 +3,34 @@ import Navbar from '../../components/navbar/Navbar';
 import MenuTabs from '../../components/menu-page-tabs/Menutabs'
 import './MenuPage.css';
 import Footer from '../../components/footer/Footer';
-import { specialMenuAction } from "../../reduxSetup/actions/specialMenuAction";
-import { getMenuAction } from "../../reduxSetup/actions/allMenuAction";
+import { specialMenuAction } from "../../reduxSetup/actions/menuAction";
+import { getMenuAction } from "../../reduxSetup/actions/menuAction";
 import SkeletonDish from '../../components/reusableMenuCard/skeletonDish';
 import empty from '../../assets/empty.svg';
 import Dish from '../../components/reusableMenuCard/Dish';
 import { connect } from 'react-redux';
 import Menutabs from '../../components/menu-page-tabs/Menutabs';
+import { NotificationManager } from "react-notifications";
 
 
 const MenuPage = (props) => {
     const [selectedCategory, setSelectedCategory] = useState("All");
 
     useEffect(() => {
-        props.specialMenuAction();
+        props.specialMenuAction().catch(err => {
+            NotificationManager.error(err.message)
+         });
     }, []);
 
     useEffect(() => {
         if (selectedCategory === "All") {
             props.getMenuAction().catch(err => {
-
+               NotificationManager.error(err.message)
             });
         } else {
-            props.getMenuAction(selectedCategory);
+            props.getMenuAction(selectedCategory).catch(err => {
+                NotificationManager.error(err.message)
+             });
         }
     }, [selectedCategory]);
 

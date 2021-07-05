@@ -11,15 +11,17 @@ import Dish from "../../components/reusableMenuCard/Dish";
 import Card from "../../components/reusableCard/Card";
 import Footer from "../../components/footer/Footer";
 import { connect } from "react-redux";
-
-import { popularMenuAction } from "../../reduxSetup/actions/popularMenuAction";
+import { NotificationManager } from "react-notifications";
+import { popularMenuAction } from "../../reduxSetup/actions/menuAction";
 import SkeletonDish from "../../components/reusableMenuCard/skeletonDish";
 
 const LandingPage = (props) => {
   const history = useHistory();
   // const mealDetails
   useEffect(() => {
-    props.popularMenuAction();
+    props.popularMenuAction().catch(err => {
+      NotificationManager.error(err.message)
+   });
   }, []);
   const [data, setData] = useState([
     {
