@@ -4,7 +4,7 @@
     flex-direction: column;
     border-radius: 30px;
     min-width: 250px;
-    max-width: 350px;
+    max-width: 320px;
     height: 400px;
     padding: 0px;
     margin-top: 50px;
@@ -87,11 +87,17 @@
 }
 @media screen and (min-width: 995px) and (max-width: 1200px){
     .dish{
-        max-width: 90%;
+        max-width: 92%;
     }
 } 
 @media screen and (min-width: 750px) and (max-width: 994px){
     .dish{
-        max-width: 80%;
+        max-width: 85%;
     }
 } 
+
+@media screen and (max-width: 360px) {
+    .dish {
+        max-width: 300px;
+    }
+}
