@@ -17,8 +17,8 @@ try {
 }
 catch(error){
     if (error?.response) {
-        return{status: error.response.status, ...error.response.data};
+        throw {status: error.response.status, ...error.response.data};
     }
-    return error;
+    throw {message:error.message};
 }
 }

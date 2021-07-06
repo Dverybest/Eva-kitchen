@@ -1,9 +1,12 @@
 import React from 'react'
-import Logo from './EvaKitchen.png'
+import { connect } from 'react-redux'
+import Logo from './EvaKitchen.png';
+import { menuCategoryAction } from "../../reduxSetup/actions/menuAction";
 import './Footer.css'
 
 
-const Footer = () =>{
+const Footer = (props) =>{
+
     return (
         <div className='footer'>
             <div className='footer-info'>
@@ -12,9 +15,9 @@ const Footer = () =>{
                 </div> 
                 <div className='footer-menu'>
                     <span className='title'>Menu</span>
-                    <li>Breakfast</li> 
-                    <li>Lunch</li> 
-                    <li>Dinner</li> 
+                    {props.menuCategory?.slice(0, 3).map((category, index)=>{
+                        return <li key={index}>{category.name}</li>
+                    })}
                 </div> 
                 <div className='footer-about'>
                     <span className='title'>About Us</span>
@@ -40,6 +43,11 @@ const Footer = () =>{
             <footer> Copyright {new Date().getFullYear()} @ evakitchen. All right reserved </footer>
         </div>
     )
-}
-
-export default Footer
+}  
+    const mapStateToProps = (state) => {
+        return{
+            menuCategory: state.meals.menuCategory,
+        }
+    }
+    const connector = connect(mapStateToProps, {menuCategoryAction})
+export default connector(Footer)
