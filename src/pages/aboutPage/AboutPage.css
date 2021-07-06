@@ -1,3 +1,12 @@
+.bannerContent{
+    font-family: "Open Sans",sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: justify;
+    color: #484848;
+}
 .about {
     font-size: 16px;
     width: 100%;
@@ -15,7 +24,6 @@
 }
 .about-order h2{
     margin-top: 30px;
-    /* margin-bottom: -50px; */
 }
 .about h2 {
     font-family: 'Inter';
