@@ -9,11 +9,6 @@ const ContactPage = () => {
     return (
         <div className='contact'>
             <Navbar />
-            {/* <header className='header'>
-                <h1>
-                    We would love to hear from you
-                </h1>
-            </header> */}
             <section className="container pt-4 sendMail">
                 <p className='title'>Let’s get in touch</p>
                 <div className='contactUs'>
