@@ -40,7 +40,7 @@ const AboutPage = () => {
                 </h1>
             </section> */}
 
-            <section className='landingPage-about pt-5 mt-5'>
+            <section className='landingPage-about aboutBanner pt-5 mt-5'>
                 <h2>ABOUT US</h2>
                 <p className="text_two">All you need to know about us</p>
                 <div className='landingPage-about-content'>
@@ -51,7 +51,7 @@ const AboutPage = () => {
                     </div>
                 </div>
             </section>
-            <section className='landingPage-order pt-3 mt-3 about-order'>
+            <section className='landingPage-order pt-3 about-order'>
                 <h2 className="">ORDER AND DELIVERY</h2>
                 <p className="text_two">Our delivery service is top notch</p>
                 <div className='card-container order-info'>
