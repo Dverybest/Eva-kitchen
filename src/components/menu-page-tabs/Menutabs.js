@@ -1,14 +1,17 @@
 import React, {useEffect } from "react";
 import "./Menutabs.css";
 import { connect } from "react-redux";
-import { menuCategoryAction } from "../../reduxSetup/actions/menuCategoryAction";
+import { menuCategoryAction } from "../../reduxSetup/actions/menuAction";
 import Skeleton from "react-loading-skeleton";
+import { NotificationManager } from "react-notifications";
 
 const MenuTab = (props) => {
   const { selectedCategory, setSelectedCategory } = props;
 
   useEffect(() => {
-    props.menuCategoryAction();
+    props.menuCategoryAction().catch(err => {
+      NotificationManager.error(err.message)
+   });
   }, []);
 
   const handleClick = (id) => {

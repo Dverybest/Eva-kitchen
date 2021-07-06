@@ -3,7 +3,7 @@ import Footer  from "../../components/footer/Footer";
 import Navbar from '../../components/navbar/Navbar';
 import './OrderPage.css';
 import { connect } from 'react-redux';
-import {getMenuAction} from "../../reduxSetup/actions/allMenuAction";
+import {getMenuAction} from "../../reduxSetup/actions/menuAction";
 import {addToCartAction,} from "../../reduxSetup/actions/orderMenuAction";
 import Dish from '../../components/reusableMenuCard/Dish';
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Logo from './EvaKitchen.png';
-import { menuCategoryAction } from "../../reduxSetup/actions/menuCategoryAction";
+import { menuCategoryAction } from "../../reduxSetup/actions/menuAction";
 import './Footer.css'
 
 
@@ -45,7 +45,6 @@ const Footer = (props) =>{
     )
 }  
     const mapStateToProps = (state) => {
-        console.log(state.meals.menuCategory, 'herrrrr');
         return{
             menuCategory: state.meals.menuCategory,
         }
