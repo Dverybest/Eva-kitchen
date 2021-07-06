@@ -30,7 +30,7 @@
 
 .textBox input, textarea {
     background: #E9EAFF;
-    border-radius: 4;
+    border-radius: 4px;
     outline: none;
     border: none;
     font-family: Open Sans;
