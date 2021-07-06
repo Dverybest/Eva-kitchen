@@ -34,20 +34,22 @@ const AboutPage = () => {
     return (
         <div className='about'>
             <Navbar />
-            {/* <section className='menu-header about-header'>
-                <h1>
-                    Welcome to Evakitchen where your satisfaction is our goal
-                </h1>
-            </section> */}
-
             <section className='landingPage-about aboutBanner pt-5 mt-5'>
                 <h2>ABOUT US</h2>
                 <p className="text_two">All you need to know about us</p>
-                <div className='landingPage-about-content'>
-                    <img src={AboutDish} alt='' />
-                    <div className='landingPage-about-info'>
-                        <p> “Healthy” isn’t just an idea. “Healthy” is science, and we take it seriously. Every delicious dish and drink at EvaKitchen is crafted to be better for your taste buds and your body. </p>
-                        <p>At EvaKitchen, our menu is carefully crafted so that every bite and every refreshing sip serve up big flavor, an abundance of fresh ingredients and a taste of the unexpected. Our artisan chefs create crave-worthy classics alongside a steady rotation of seasonal offerings that take advantage of naturally ripe fruits and vegetables so their flavor is full and their nutrients, rich. Creative, hand-crafted beverages built around seasonality, quality ingredients and simple preparations complement every occasion from brunch, lunch, dinner and, of course, dessert. Always room for dessert.</p>
+                <div className="container">
+                    <div className="row align-items-center justify-content-between">
+                        <div className="col-md-6">
+                            <div>
+                                <img src={AboutDish} className="w-100" alt='' />
+                            </div>
+                        </div>
+                        <div className="col-md-6">
+                            <div className="bannerContent">
+                                <p> “Healthy” isn’t just an idea. “Healthy” is science, and we take it seriously. Every delicious dish and drink at EvaKitchen is crafted to be better for your taste buds and your body. </p>
+                                <p>At EvaKitchen, our menu is carefully crafted so that every bite and every refreshing sip serve up big flavor, an abundance of fresh ingredients and a taste of the unexpected. Our artisan chefs create crave-worthy classics alongside a steady rotation of seasonal offerings that take advantage of naturally ripe fruits and vegetables so their flavor is full and their nutrients, rich. Creative, hand-crafted beverages built around seasonality, quality ingredients and simple preparations complement every occasion from brunch, lunch, dinner and, of course, dessert. Always room for dessert.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
