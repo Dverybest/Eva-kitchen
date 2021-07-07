@@ -43,7 +43,7 @@ const Navbar = (props) => {
                         <Link to="/">Link 3</Link> */}
                         </div>
                     </div></li>
-                    <li><Link className={`navLink ${paths[5] === location.pathname ? 'active' : ''}`} to='/menu'> <i style={{marginRight:10}} className="fa fa-shopping-bag" aria-hidden="true"></i>{`${props.cartCount} items`} </Link> </li>
+                    <li><Link className={`navLink ${paths[5] === location.pathname ? 'active' : ''}`} to='/checkout'> <i style={{marginRight:10}} className="fa fa-shopping-bag" aria-hidden="true"></i>{`${props.cartCount} items`} </Link> </li>
                 </ul>
             </div>
         </nav>
