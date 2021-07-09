@@ -34,12 +34,6 @@ const AboutPage = () => {
     return (
         <div className='about'>
             <Navbar />
-            {/* <section className='menu-header about-header'>
-                <h1>
-                    Welcome to Evakitchen where your satisfaction is our goal
-                </h1>
-            </section> */}
-
             <section className='landingPage-about aboutBanner pt-5 mt-5'>
                 <h2>ABOUT US</h2>
                 <p className="text_two">All you need to know about us</p>

@@ -39,8 +39,6 @@ const Navbar = (props) => {
                         <Link className={`navLink ${paths[4] === location.pathname ? 'active' : ''}`} to='/'> Account <i style={{marginLeft:10}} className="fa fa-caret-down"></i></Link>
                         <div class="dropdown-content">
                             <Link to="/">Sign In</Link>
-                            {/* <Link to="/">Link 2</Link>
-                        <Link to="/">Link 3</Link> */}
                         </div>
                     </div></li>
                     <li><Link className={`navLink ${paths[5] === location.pathname ? 'active' : ''}`} to='/checkout'> <i style={{marginRight:10}} className="fa fa-shopping-bag" aria-hidden="true"></i>{`${props.cartCount} items`} </Link> </li>
@@ -52,8 +50,8 @@ const Navbar = (props) => {
 
 const mapStateToProps = (state)=>{
     return{
-        addToCart: state.addItem.addToCart,
-        cartCount: state.addItem.cartCount
+        addToCart: state.cart.addToCart,
+        cartCount: state.cart.cartCount
     }
 }
 const connector = connect(mapStateToProps, {addToCartAction, })
