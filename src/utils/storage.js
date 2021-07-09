@@ -1,6 +1,6 @@
 export const getStorage = ()=>{
     try {
-       let value = sessionStorage.getItem('itemKey');
+       let value = localStorage.getItem('itemKey');
        if (typeof value === "string") return JSON.parse(value);
        return { }
     } catch (error) {
@@ -8,5 +8,5 @@ export const getStorage = ()=>{
     }
 };
 export const setStorage = (data) =>{
-    sessionStorage.setItem('itemKey', JSON.stringify(data));
+    localStorage.setItem('itemKey', JSON.stringify(data));
 }
