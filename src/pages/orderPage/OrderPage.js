@@ -3,6 +3,7 @@ import Footer  from "../../components/footer/Footer";
 import Navbar from '../../components/navbar/Navbar';
 import './OrderPage.css';
 import { connect } from 'react-redux';
+import { NotificationManager } from "react-notifications";
 import {getMenuAction} from "../../reduxSetup/actions/menuAction";
 import {addToCartAction,} from "../../reduxSetup/actions/orderMenuAction";
 import Dish from '../../components/reusableMenuCard/Dish';
@@ -14,6 +15,9 @@ const OrderPage = (props)=> {
     const [quantity, setquantity] = useState(0)
     const addItemToCart =(e)=>{
         e.preventDefault();
+        if (quantity === 0 ){
+            return NotificationManager.warning('please enter a quantity') 
+        }
         props.addToCartAction({...meal, quantity});
         setquantity( 0)
 
