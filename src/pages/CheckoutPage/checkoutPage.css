@@ -1,7 +1,4 @@
-.checkoutBody{
-   max-height: 90vh;
-   overflow: hidden;
-}
+
 .processes{
     /* background-color: rgba(255, 141, 35, 0.04); */
     font-family: 'Inter';
@@ -13,9 +10,14 @@
     text-align: left;
 
 }
+.formSection{
+    background-color: rgba(255, 141, 35, 0.04);
+
+}
 .dashSymbol{
-    border-bottom: 2px solid black !important;
-    width: 1.2rem;
+    border-bottom: 1px solid black !important;
+    /* width: 18px; */ 
+    min-width: 10px ;
 }
 .activeText{
     color: rgba(255, 141, 35, 1);
@@ -30,10 +32,10 @@
     font-size: 12px;
     font-weight: 100;
 }
-.orderSection{
-    overflow-y: scroll;
-    height: 80%;
+.orderView{
     background-color: rgba(255, 141, 35, 0.04);
+}
+.orderSection{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
@@ -43,4 +45,42 @@
 }
 .imageWrapper{
     /* width: 65%; */
+}
+
+
+/* media querry */
+@media screen and (max-width: 991px){
+    .processes{
+        font-size: 13px ;
+        /* margin-right: 0 !important;*/
+    }
+    /* .processes span{
+        padding-right: 1em;
+        padding-left: 1em;
+    } */
+}
+@media screen and (max-width: 767px) and (min-width: 576px){
+    .processes{
+        font-size: 10px;
+    }
+    .dashSymbol{
+        /* border-bottom: 2px solid black !important;
+    width: 18px; */
+    }
+}
+@media screen and (max-width: 575px) and (min-width: 425px){
+    .purchaseDetails{
+        padding: 4em;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .checkoutBody{
+        max-height: 90vh;
+        overflow-y: hidden;
+    }
+    .orderSection{
+        overflow-y: scroll;
+        height: 80%;
+    }
 }
