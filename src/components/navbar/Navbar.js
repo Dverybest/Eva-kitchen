@@ -1,4 +1,5 @@
-import React, { useState, useSelector } from "react";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { Link, withRouter, useLocation } from "react-router-dom";
 import Logo from "./EvaKitchen.png";
 import "./Navbar.css";
