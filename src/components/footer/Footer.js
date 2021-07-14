@@ -28,8 +28,6 @@ const Footer = (props) =>{
                     <span className='title'>Opening Hours</span>
                     <p>Monday - Saturday</p>
                     <p>10:50am - 07:00pm</p>
-                    {/* <p>Sunday</p>
-                    <p>11:00am - 08:00pm</p> */}
                 </div> 
                 <div className='footer-social'>
                     <span className='title'>Follow us on social media</span>
