@@ -7,8 +7,8 @@ import ContactPage from './pages/contactPage/ContactPage';
 import { NotificationContainer } from "react-notifications";
 import OrderPage from './pages/orderPage/OrderPage'
 import checkoutPage from './pages/CheckoutPage/checkoutPage'
-import SignIn from './components/Authentication/signIn'
-import SignUp from './components/Authentication/signUp'
+// import SignIn from './components/Authentication/signIn'
+// import SignUp from './components/Authentication/signUp'
 
 function App() {
   return (
@@ -20,8 +20,8 @@ function App() {
           <Route exact path='/contact-us' component={ContactPage} />
           <Route exact path='/order' component={OrderPage}/>
           <Route exact path="/checkout" component={checkoutPage}/>
-          <Route exact path="/signIn" component={SignIn}/>
-          <Route exact path="/signUp" component={SignUp}/>
+          {/* <Route exact path="/signIn" component={SignIn}/>
+          <Route exact path="/signUp" component={SignUp}/> */}
 
         </Switch>  
         <NotificationContainer/>
