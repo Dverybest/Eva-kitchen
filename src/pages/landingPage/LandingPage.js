@@ -17,7 +17,6 @@ import SkeletonDish from "../../components/reusableMenuCard/skeletonDish";
 
 const LandingPage = (props) => {
   const history = useHistory();
-  // const mealDetails
   useEffect(() => {
     props.popularMenuAction().catch(err => {
       NotificationManager.error(err.message)
@@ -97,22 +96,31 @@ const LandingPage = (props) => {
       <section className="landingPage-about">
         <h2>ABOUT US</h2>
         <p className="text_two">All you need to know about us</p>
-        <div className="landingPage-about-content">
-          <img src={image1} alt="" />
-          <div className="landingPage-about-info">
-            <p>
-              At EvaKitchen, our menu is carefully crafted so that every bite
-              and every refreshing sip serve up big flavor, an abundance of
-              fresh ingredients and a taste of the unexpected. Our artisan chefs
-              create crave-worthy classics alongside a steady rotation of
-              seasonal offerings that take advantage of naturally ripe fruits
-              and vegetables so their flavor is full and their nutrients, rich.
-              Creative, hand-crafted beverages built around seasonality, quality
-              ingredients and simple preparations complement every occasion from
-              brunch, lunch, dinner and, of course, dessert. Always room for
-              dessert.
-            </p>
-            <button className="button">Learn More</button>
+        <div className="container my-4">
+          <div className="row">
+            <div className="col-md-6">
+              <div>
+                <img src={image1} className="w-100" alt="" />
+              </div>
+            </div>
+            <div className="col-md-6">
+              <div className="LandingPageAbout">
+                <p className="mb-5">
+                  At EvaKitchen, our menu is carefully crafted so that every bite
+                  and every refreshing sip serve up big flavor, an abundance of
+                  fresh ingredients and a taste of the unexpected. Our artisan chefs
+                  create crave-worthy classics alongside a steady rotation of
+                  seasonal offerings that take advantage of naturally ripe fruits
+                  and vegetables so their flavor is full and their nutrients, rich.
+                  Creative, hand-crafted beverages built around seasonality, quality
+                  ingredients and simple preparations complement every occasion from
+                  brunch, lunch, dinner and, of course, dessert. Always room for
+                  dessert.
+                </p>
+                <button className="button mt-5">Learn More</button>
+              </div>
+              
+            </div>
           </div>
         </div>
       </section>
