@@ -1,4 +1,4 @@
-import { ADD_TO_CART, DECREMENT, INCREMENT, ITEMS_IN_CART} from "../constants";
+import { ADD_TO_CART, INCREMENT, DECREMENT, ITEMS_IN_CART} from "../constants";
 const initialState = {cartItem: [], cartCount:0}
 export const cartReducer = (state= initialState, action)=>{ 
     switch (action.type) {
