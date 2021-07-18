@@ -1,19 +1,20 @@
 import { requestProcessor } from "../../URLs/requestProcessor";
 import { ALL_MENU, MENU_CATEGORY, POPULAR_MENU, SPECIAL_MENU } from "../constants";
 import { loadingAction } from "./loadingAction";
+import { generateUrl } from "../../utils/urlGenerator";
 
-const getMenuAction = (id) => (dispatch) =>
+const getMenuAction = ( payload ) => (dispatch) =>
     new Promise(async (resolve, reject) => {
         dispatch(loadingAction(true));
         try {
             const response = await requestProcessor({
                 method: 'GET',
-                url: id ? `/menu?category=${id}` : '/menu',
+                url: generateUrl( '/menu', payload), 
                 dispatch,
-            });
+            }); 
             dispatch({
                 type: ALL_MENU,
-                payload: response.data.docs
+                payload: response.data
             })
             resolve(response);
         } catch (error) {
