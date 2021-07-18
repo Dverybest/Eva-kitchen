@@ -15,6 +15,7 @@ import { NotificationManager } from "react-notifications";
 
 const MenuPage = (props) => {
     const [selectedCategory, setSelectedCategory] = useState("All");
+    const [pageNumber, setpageNumber] = useState(props.currentPage);
 
     useEffect(() => {
         props.specialMenuAction().catch(err => {
@@ -23,26 +24,28 @@ const MenuPage = (props) => {
     }, []);
 
     useEffect(() => {
-        if (selectedCategory === "All") {
-            props.getMenuAction().catch(err => {
-               NotificationManager.error(err.message)
-            });
-        } else {
-            props.getMenuAction(selectedCategory).catch(err => {
-                NotificationManager.error(err.message)
-             });
+        props.getMenuAction(selectedCategory === "All"? {limit: 6, pageNumber: pageNumber}: {category: selectedCategory, limit: 6, pageNumber:pageNumber} ).catch(err => {
+            NotificationManager.error(err.message)
+         });
+    }, [selectedCategory, pageNumber]);
+    const nextPage = ()=> {
+        if (pageNumber < props.totalPages){
+            setpageNumber(prevPage => prevPage + 1 )
         }
-    }, [selectedCategory]);
-
+    }
+    const previousPage = ()=> {
+        if (pageNumber !== 1) {
+            setpageNumber(prevPage => prevPage - 1)
+        }
+    }
     return (
         <div className='menu'>
             <Navbar />
-
             <div className="contain">
                 <div className='search_container'>
                     <div className='search'>
                         <i class="fa fa-search"></i>
-                        <input type='text' placeholder={"Search for food, coffe, etc.."} />
+                        <input type='text' placeholder={"Search for food, coffee, etc.."} />
                     </div>
                     <button className="button">
                         Search
@@ -82,9 +85,9 @@ const MenuPage = (props) => {
                 </div>
                 <div className='d-flex justify-content-center my-5 align-items-center paginate'>
 
-                    <button className='btn mx-4'><i className="fa fa-angle-left" aria-hidden="true"></i></button>
-                    <span>Page 1 / 1 </span>
-                    <button className='btn mx-4'><i className="fa fa-angle-right" aria-hidden="true"></i></button>
+                    <button className='btn mx-4' onClick={previousPage}><i className="fa fa-angle-left" aria-hidden="true"></i></button>
+                    <span>{`Page ${props.currentPage} / ${props.totalPages} `}</span>
+                    <button className='btn mx-4' onClick={nextPage}><i className="fa fa-angle-right" aria-hidden="true"></i></button>
 
                 </div>
             </setion>
@@ -123,7 +126,9 @@ const mapStateToProps = (state) => {
     const { meals, loader } = state;
     return {
         specialMenu: Array.isArray(meals.specialMenu) ? meals.specialMenu : [],
-        selectedMenuList: Array.isArray(meals.allMenu) ? meals.allMenu : [],
+        selectedMenuList: Array.isArray(meals.allMenu?.docs) ? meals.allMenu.docs : [],
+        totalPages: meals.allMenu?.totalPages ?? 1,
+        currentPage: meals.allMenu.page ?? 1,
         isLoading: loader.loading,
     };
 };
