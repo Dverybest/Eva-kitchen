@@ -77,7 +77,7 @@ const Navbar = (props) => {
         </div>
         <ul className={`secondary ${className}`}>
           <li>
-            <div class="dropdown">
+            <div className="dropdown">
               <Link
                 className={`navLink ${
                   paths[4] === location.pathname ? "active" : ""
@@ -88,7 +88,7 @@ const Navbar = (props) => {
                 Account{" "}
                 <i style={{ marginLeft: 10 }} className="fa fa-caret-down"></i>
               </Link>
-              <div class="dropdown-content">
+              <div className="dropdown-content">
                 <Link to="/">Sign In</Link>
               </div>
             </div>
