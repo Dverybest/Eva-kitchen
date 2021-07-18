@@ -33,7 +33,7 @@ const CheckoutPage = (props) => {
       0
     );
   }, [props.cart]);
-  
+
   const deliveryCost = 500.0;
 
   return (
@@ -129,7 +129,7 @@ const CheckoutPage = (props) => {
                       <i className="fa fa-check-circle" aria-hidden="true"></i>
                     </div>
                     <span className=" dashSymbol"></span>
-                    <span className="px-2">Shipping</span>
+                    <span className={`px-2 ${props.isAuthenticated?'activeText':''}`}>Shipping</span>
                     <span className=" dashSymbol"></span>
                     <span className="px-2">
                       <i className="fa fa-check-circle" aria-hidden="true"></i>
@@ -138,7 +138,10 @@ const CheckoutPage = (props) => {
                     <span className="px-2">Payment</span>
                   </div>
                 </div>
-                <SignIn />
+                {
+                  !props.isAuthenticated?
+                  <SignIn />:<></>
+                }
                 {/* no cancel order option yet*/}
                 {/* <Link >Cancel Order</Link>*/}
                 {/* <Link>Shipping Details</Link> */}
@@ -153,6 +156,7 @@ const CheckoutPage = (props) => {
 };
 const mapStateToProps = (state) => {
   return {
+    isAuthenticated:state.auth.isAuthenticated,
     cart: Array.isArray(state.cart.cartItem) ? state.cart.cartItem : [],
   };
 };
