@@ -15,7 +15,7 @@ const Navbar = (props) => {
       setClassName("NavBar");
     }
   };
-  const cartCount = useSelector((state) => state.cart.cartCount);
+  const { cart: { cartCount }, auth } = useSelector((state) => state);
   return (
     <nav className="nav">
       <div className={"brand"}>
@@ -31,47 +31,39 @@ const Navbar = (props) => {
           <ul className={className}>
             <li>
               <Link
-                className={`navLink ${
-                  paths[0] === location.pathname ? "active" : ""
-                }`}
+                className={`navLink ${paths[0] === location.pathname ? "active" : ""
+                  }`}
                 to="/"
               >
-                {" "}
-                Home{" "}
-              </Link>{" "}
+                Home
+              </Link>
             </li>
             <li>
               <Link
-                className={`navLink ${
-                  paths[1] === location.pathname ? "active" : ""
-                }`}
+                className={`navLink ${paths[1] === location.pathname ? "active" : ""
+                  }`}
                 to="/menu"
               >
-                {" "}
-                Menu{" "}
-              </Link>{" "}
+                Menu
+              </Link>
             </li>
             <li>
               <Link
-                className={`navLink ${
-                  paths[2] === location.pathname ? "active" : ""
-                }`}
+                className={`navLink ${paths[2] === location.pathname ? "active" : ""
+                  }`}
                 to="/about"
               >
-                {" "}
-                About Us{" "}
-              </Link>{" "}
+                About Us
+              </Link>
             </li>
             <li>
               <Link
-                className={`navLink ${
-                  paths[3] === location.pathname ? "active" : ""
-                }`}
+                className={`navLink ${paths[3] === location.pathname ? "active" : ""
+                  }`}
                 to="/contact-us"
               >
-                {" "}
-                Contact Us{" "}
-              </Link>{" "}
+                Contact Us
+              </Link>
             </li>
           </ul>
         </div>
@@ -79,35 +71,45 @@ const Navbar = (props) => {
           <li>
             <div className="dropdown">
               <Link
-                className={`navLink ${
-                  paths[4] === location.pathname ? "active" : ""
-                }`}
+                className={`navLink ${paths[4] === location.pathname ? "active" : ""
+                  }`}
                 to="/"
               >
-                {" "}
-                Account{" "}
+                Account
                 <i style={{ marginLeft: 10 }} className="fa fa-caret-down"></i>
               </Link>
               <div className="dropdown-content">
-                <Link to="/">Sign In</Link>
+                {
+                  auth.isAuthenticated ? (
+                    <>
+                      <Link to="/">Profile</Link>
+                      <Link to="/">My Orders</Link>
+                      <Link to="/">Log Out</Link>
+                    </>
+                  ) : (
+                    <>
+                      <Link to="/">Sign In</Link>
+                      <Link to="/">Sign Up</Link>
+                    </>
+                  )
+                }
               </div>
             </div>
           </li>
           <li>
             <Link
-              className={`navLink ${
-                paths[5] === location.pathname ? "active" : ""
-              }`}
+              className={`navLink ${paths[5] === location.pathname ? "active" : ""
+                }`}
               to="/checkout"
             >
-              {" "}
+
               <i
                 style={{ marginRight: 10 }}
                 className="fa fa-shopping-bag"
                 aria-hidden="true"
               ></i>
-              {`${cartCount} items`}{" "}
-            </Link>{" "}
+              {`${cartCount} items`}
+            </Link>
           </li>
         </ul>
       </div>
