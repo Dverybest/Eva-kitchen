@@ -1,4 +1,4 @@
-import { IS_AUTHENTICATED } from "../constants";
+import { IS_AUTHENTICATED,LOG_OUT } from "../constants";
 import { requestProcessor } from "../../URLs/requestProcessor";
 import { loadingAction } from "./loadingAction";
 
@@ -24,3 +24,7 @@ export const signInAction = (payload) => (dispatch) =>
             dispatch(loadingAction(false));
         }
     })
+
+export const logOutAction=()=>{
+    return {type:LOG_OUT,payload:null}
+}

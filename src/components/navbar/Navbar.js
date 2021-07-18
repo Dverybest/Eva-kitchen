@@ -1,12 +1,15 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import { Link, withRouter, useLocation } from "react-router-dom";
+import { logOutAction } from "../../reduxSetup/actions/authAction";
 import Logo from "./EvaKitchen.png";
 import "./Navbar.css";
 
 const Navbar = (props) => {
+  const { cart: { cartCount }, auth } = useSelector((state) => state);
   const [className, setClassName] = useState("NavBar");
   const location = useLocation();
+  const dispatch = useDispatch()
   const paths = ["/", "/menu", "/about", "/contact-us", "account", "checkout"];
 
   const handleClick = () => {
@@ -15,7 +18,10 @@ const Navbar = (props) => {
       setClassName("NavBar");
     }
   };
-  const { cart: { cartCount }, auth } = useSelector((state) => state);
+  const handleLogOut = (e)=>{
+      e.preventDefault();
+      dispatch(logOutAction())
+  }
   return (
     <nav className="nav">
       <div className={"brand"}>
@@ -74,6 +80,7 @@ const Navbar = (props) => {
                 className={`navLink ${paths[4] === location.pathname ? "active" : ""
                   }`}
                 to="/"
+                onClick={e=>e.preventDefault()}
               >
                 Account
                 <i style={{ marginLeft: 10 }} className="fa fa-caret-down"></i>
@@ -84,14 +91,14 @@ const Navbar = (props) => {
                     <>
                       <Link to="/">Profile</Link>
                       <Link to="/">My Orders</Link>
-                      <Link to="/">Log Out</Link>
+                      <Link to="/" onClick={handleLogOut}>Log Out</Link>
                     </>
                   ) : (
                     <>
                       <Link to="/">Sign In</Link>
                       <Link to="/">Sign Up</Link>
                     </>
-                  )
+                  ) 
                 }
               </div>
             </div>
