@@ -8,3 +8,5 @@ export const ITEMS_IN_CART = 'ITEMS_IN_CART';
 export const INCREMENT= 'INCREMENT';
 export const DECREMENT= 'DECREMENT';
 export const ADD_TO_CART = 'ADD_TO_CART';
+export const IS_AUTHENTICATED = 'IS_AUTHENTICATED';
+export const LOG_OUT='LOG_OUT';

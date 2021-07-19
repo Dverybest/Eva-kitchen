@@ -7,12 +7,14 @@ import ContactPage from './pages/contactPage/ContactPage';
 import { NotificationContainer } from "react-notifications";
 import OrderPage from './pages/orderPage/OrderPage'
 import checkoutPage from './pages/CheckoutPage/checkoutPage'
+import ScrollToTop from './components/scrollTop'
 // import SignIn from './components/Authentication/signIn'
 // import SignUp from './components/Authentication/signUp'
 
 function App() {
   return (
       <BrowserRouter>   
+        <ScrollToTop />
         <Switch>
           <Route exact path='/' component={LandingPage} />
           <Route exact path='/menu' component={MenuPage} />

@@ -101,15 +101,16 @@
   margin: 0 7px;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 780px) {
   .nav {
     display: flex;
     flex-direction: column;
     align-items: unset;
+ 
   }
   .nav .link {
     flex: 1;
-    padding-top: 150px;
+    padding-top: 50px;
     position: absolute;
     right: 0;
     height: 100vh;
