@@ -1,7 +1,9 @@
-import React, { useState } from "react";
-import { useSelector,useDispatch } from "react-redux";
+import { findAllByDisplayValue } from "@testing-library/react";
+import React, { useState,useRef,useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Link, withRouter, useLocation } from "react-router-dom";
 import { logOutAction } from "../../reduxSetup/actions/authAction";
+import SignIn from "../Authentication/signIn";
 import Logo from "./EvaKitchen.png";
 import "./Navbar.css";
 
@@ -10,6 +12,8 @@ const Navbar = (props) => {
   const [className, setClassName] = useState("NavBar");
   const location = useLocation();
   const dispatch = useDispatch()
+
+  const [ show, setShow] = useState(false)
   const paths = ["/", "/menu", "/about", "/contact-us", "account", "checkout"];
 
   const handleClick = () => {
@@ -18,11 +22,12 @@ const Navbar = (props) => {
       setClassName("NavBar");
     }
   };
-  const handleLogOut = (e)=>{
-      e.preventDefault();
-      dispatch(logOutAction())
+  const handleLogOut = (e) => {
+    e.preventDefault();
+    dispatch(logOutAction())
   }
-  return (
+
+  return (<div d-flex flex-column>
     <nav className="nav">
       <div className={"brand"}>
         <a href="/">
@@ -80,7 +85,7 @@ const Navbar = (props) => {
                 className={`navLink ${paths[4] === location.pathname ? "active" : ""
                   }`}
                 to="/"
-                onClick={e=>e.preventDefault()}
+                onClick={e => e.preventDefault()}
               >
                 Account
                 <i style={{ marginLeft: 10 }} className="fa fa-caret-down"></i>
@@ -95,10 +100,12 @@ const Navbar = (props) => {
                     </>
                   ) : (
                     <>
-                      <Link to="/">Sign In</Link>
+                      <Link onClick={e=>{e.preventDefault();setShow(true)}}>
+                        Sign In
+                      </Link>
                       <Link to="/">Sign Up</Link>
                     </>
-                  ) 
+                  )
                 }
               </div>
             </div>
@@ -121,6 +128,22 @@ const Navbar = (props) => {
         </ul>
       </div>
     </nav>
+    <div className={`modal fade ${show?'show':''} `}id="Modal" tabindex="-1"  style={{display:show? "block":'',backgroundColor:'#00000060'}} aria-modal="true" role="dialog">
+      <div className="modal-dialog">
+        <div className="modal-content">
+          <div className="modal-header">
+          <h5 class="modal-title" id="ModalLabel">Sign In</h5>
+            <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={()=>setShow(false)}>
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div className="modal-body">
+            <SignIn/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   );
 };
 
