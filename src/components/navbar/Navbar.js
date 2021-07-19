@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link, withRouter, useLocation } from "react-router-dom";
 import { logOutAction } from "../../reduxSetup/actions/authAction";
 import SignIn from "../Authentication/signIn";
+import SignUp from "../Authentication/signUp";
 import Logo from "./EvaKitchen.png";
 import "./Navbar.css";
 
@@ -12,10 +13,10 @@ const Navbar = (props) => {
   const [className, setClassName] = useState("NavBar");
   const location = useLocation();
   const dispatch = useDispatch()
-
+  const [manageAuth, setmanageAuth] = useState('')
   const [ show, setShow] = useState(false)
   const paths = ["/", "/menu", "/about", "/contact-us", "account", "checkout"];
-
+  
   const handleClick = () => {
     setClassName("NavBar-mobile");
     if (className === "NavBar-mobile") {
@@ -26,7 +27,11 @@ const Navbar = (props) => {
     e.preventDefault();
     dispatch(logOutAction())
   }
-
+  const handleModal = (e, auth)=>{
+    e.preventDefault();
+    setShow(true)
+    setmanageAuth(auth)
+  }
   return (<div d-flex flex-column>
     <nav className="nav">
       <div className={"brand"}>
@@ -100,10 +105,10 @@ const Navbar = (props) => {
                     </>
                   ) : (
                     <>
-                      <Link onClick={e=>{e.preventDefault();setShow(true)}}>
+                      <Link onClick={e=>handleModal(e, 'signIn')}>
                         Sign In
                       </Link>
-                      <Link to="/">Sign Up</Link>
+                      <Link onClick={e=>handleModal(e, 'signUp')}>Sign Up</Link>
                     </>
                   )
                 }
@@ -138,7 +143,8 @@ const Navbar = (props) => {
             </button>
           </div>
           <div className="modal-body">
-            <SignIn/>
+            {manageAuth === "signIn"? <SignIn setmanageAuth={setmanageAuth}/>: 
+            <SignUp setmanageAuth={setmanageAuth}/>}
           </div>
         </div>
       </div>
