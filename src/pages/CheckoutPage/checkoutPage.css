@@ -80,7 +80,6 @@
         max-height: 100vh;
     }
     .orderSection{
-        overflow-y: scroll;
         height: 100%;
     }
 }

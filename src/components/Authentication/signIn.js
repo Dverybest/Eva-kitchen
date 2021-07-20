@@ -49,7 +49,7 @@ const SignIn = (props) => {
             </div>
           </div>
           <div className="d-flex justify-content-end align-items-rigt">
-            <button onClick={()=>{history.push({pathname:'/signUp'})}} className="btn registerButton">Create Account</button>
+            <button onClick={()=>props.setmanageAuth("signUp")} className="btn registerButton">Create Account</button>
             <button className="btn registerButton activeButton" onClick={handleSignIn}>{props.isLoading?'Authenticating...':'Sign In'}</button>
           </div>
         </form>
