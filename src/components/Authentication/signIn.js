@@ -49,8 +49,14 @@ const SignIn = (props) => {
             </div>
           </div>
           <div className="d-flex justify-content-end align-items-rigt">
-            <button onClick={()=>props.setmanageAuth("signUp")} className="btn registerButton">Create Account</button>
-            <button className="btn registerButton activeButton" onClick={handleSignIn}>{props.isLoading?'Authenticating...':'Sign In'}</button>
+            <button onClick={(e)=>{
+              e.preventDefault()
+              props.setmanageAuth("signUp")
+            }} className="btn registerButton">Create Account</button>
+            <button className="btn registerButton activeButton" onClick={handleSignIn}>
+              {/* {props.isLoading?'Authenticating...':'Sign In'} */}
+              SignIn
+              </button>
           </div>
         </form>
       </div>

@@ -10,6 +10,8 @@ import {
   handleDecrementChange,
 } from "../../reduxSetup/actions/orderMenuAction";
 import "./checkoutPage.css";
+import Shipping from "../../components/shipping/shipping";
+import SignUp from "../../components/Authentication/signUp";
 
 const CheckoutPage = (props) => {
   let formatPrice = new Intl.NumberFormat();
@@ -22,7 +24,13 @@ const CheckoutPage = (props) => {
 
     props.handleDecrementChange(index);
   };
-
+  // const [show, setshow] = useState(false)
+  const [manageAuth, setmanageAuth] = useState('signIn');
+  // handlePageChange = (e, auth)=>{
+  //   e.preventDefault();
+  //   setshow(true)
+  //   setmanageAuth(auth)
+  // }
   useEffect(() => {
     setCurrentCart(props.cart);
   }, [props.cart]);
@@ -139,8 +147,9 @@ const CheckoutPage = (props) => {
                   </div>
                 </div>
                 {
-                  !props.isAuthenticated?
-                  <SignIn />:<></>
+                  // 
+                  !props.isAuthenticated?manageAuth==='signIn'?<SignIn setmanageAuth={setmanageAuth}/>:<SignUp setmanageAuth={setmanageAuth}/>:<Shipping/>
+                  // 
                 }
                 {/* no cancel order option yet*/}
                 {/* <Link >Cancel Order</Link>*/}

@@ -8,6 +8,7 @@ import { NotificationContainer } from "react-notifications";
 import OrderPage from './pages/orderPage/OrderPage'
 import checkoutPage from './pages/CheckoutPage/checkoutPage'
 import ScrollToTop from './components/scrollTop'
+import Shipping from './components/shipping/shipping'
 // import SignIn from './components/Authentication/signIn'
 // import SignUp from './components/Authentication/signUp'
 
@@ -22,6 +23,8 @@ function App() {
           <Route exact path='/contact-us' component={ContactPage} />
           <Route exact path='/order' component={OrderPage}/>
           <Route exact path="/checkout" component={checkoutPage}/>
+          <Route exact path="/shipping" component={Shipping}/>
+
           {/* <Route exact path="/signIn" component={SignIn}/>
           <Route exact path="/signUp" component={SignUp}/> */}
 
