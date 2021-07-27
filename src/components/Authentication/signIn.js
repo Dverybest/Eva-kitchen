@@ -1,12 +1,10 @@
 import React,{useState} from "react";
 import './authentication.css'
-import { useHistory } from "react-router-dom";
 import { NotificationManager } from "react-notifications";
 import { connect } from "react-redux";
 import { signInAction } from "../../reduxSetup/actions/authAction";
 
 const SignIn = (props) => {
-    const history = useHistory();
     const [email,setEmail] = useState('');
     console.log(email);
     const [password,setPassword] = useState('');
@@ -49,8 +47,14 @@ const SignIn = (props) => {
             </div>
           </div>
           <div className="d-flex justify-content-end align-items-rigt">
-            <button onClick={()=>props.setmanageAuth("signUp")} className="btn registerButton">Create Account</button>
-            <button className="btn registerButton activeButton" onClick={handleSignIn}>{props.isLoading?'Authenticating...':'Sign In'}</button>
+            <button onClick={(e)=>{
+              e.preventDefault()
+              props.setmanageAuth("signUp")
+            }} className="btn registerButton">Create Account</button>
+            <button className="btn registerButton activeButton" onClick={handleSignIn}>
+              {/* {props.isLoading?'Authenticating...':'Sign In'} */}
+              SignIn
+              </button>
           </div>
         </form>
       </div>

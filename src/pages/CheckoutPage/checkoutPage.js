@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { connect, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import SignIn from "../../components/Authentication/signIn";
 import empty from '../../assets/empty.svg';
 import Navbar from "../../components/navbar/Navbar";
@@ -10,6 +9,8 @@ import {
   handleDecrementChange,
 } from "../../reduxSetup/actions/orderMenuAction";
 import "./checkoutPage.css";
+import Shipping from "../../components/shipping/shipping";
+import SignUp from "../../components/Authentication/signUp";
 
 const CheckoutPage = (props) => {
   let formatPrice = new Intl.NumberFormat();
@@ -22,7 +23,7 @@ const CheckoutPage = (props) => {
 
     props.handleDecrementChange(index);
   };
-
+  const [manageAuth, setmanageAuth] = useState('signIn');
   useEffect(() => {
     setCurrentCart(props.cart);
   }, [props.cart]);
@@ -44,7 +45,7 @@ const CheckoutPage = (props) => {
         {
           currentCart.length === 0 ? (
             <div className='empty-container'>
-              <img src={empty} />
+              <img src={empty} alt=''/>
               <p>No food selected yet</p>
             </div>
           ) : null
@@ -139,8 +140,7 @@ const CheckoutPage = (props) => {
                   </div>
                 </div>
                 {
-                  !props.isAuthenticated?
-                  <SignIn />:<></>
+                  !props.isAuthenticated?manageAuth==='signIn'?<SignIn setmanageAuth={setmanageAuth}/>:<SignUp setmanageAuth={setmanageAuth}/>:<Shipping/>
                 }
                 {/* no cancel order option yet*/}
                 {/* <Link >Cancel Order</Link>*/}

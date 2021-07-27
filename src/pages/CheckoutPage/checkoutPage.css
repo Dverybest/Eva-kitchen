@@ -45,9 +45,9 @@
     line-height: 24px;
     color: #000000;
 }
-.imageWrapper{
-    /* width: 65%; */
-}
+/* .imageWrapper{
+    /* width: 65%;
+} */
 
 
 /* media querry */
@@ -64,10 +64,10 @@
     .processes{
         font-size: 10px;
     }
-    .dashSymbol{
+    /* .dashSymbol{
         /* border-bottom: 2px solid black !important;
-    width: 18px; */
-    }
+    width: 18px;
+    } */
 }
 @media screen and (max-width: 575px) and (min-width: 425px){
     .purchaseDetails{

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../../components/navbar/Navbar';
-import MenuTabs from '../../components/menu-page-tabs/Menutabs'
 import './MenuPage.css';
 import Footer from '../../components/footer/Footer';
 import { specialMenuAction } from "../../reduxSetup/actions/menuAction";
