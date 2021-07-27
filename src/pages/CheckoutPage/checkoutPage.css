@@ -12,6 +12,7 @@
 }
 .formSection{
     background-color: rgba(255, 141, 35, 0.04);
+    height: fit-content;
 
 }
 .dashSymbol{
@@ -34,6 +35,7 @@
 }
 .orderView{
     background-color: rgba(255, 141, 35, 0.04);
+    height: 100%;
 }
 .orderSection{
     font-family: 'Inter';
@@ -43,9 +45,9 @@
     line-height: 24px;
     color: #000000;
 }
-.imageWrapper{
-    /* width: 65%; */
-}
+/* .imageWrapper{
+    /* width: 65%;
+} */
 
 
 /* media querry */
@@ -54,19 +56,18 @@
         font-size: 13px ;
         /* margin-right: 0 !important;*/
     }
-    /* .processes span{
-        padding-right: 1em;
-        padding-left: 1em;
-    } */
+    .formSection{
+        margin: 15px 0px;
+    }
 }
 @media screen and (max-width: 767px) and (min-width: 576px){
     .processes{
         font-size: 10px;
     }
-    .dashSymbol{
+    /* .dashSymbol{
         /* border-bottom: 2px solid black !important;
-    width: 18px; */
-    }
+    width: 18px;
+    } */
 }
 @media screen and (max-width: 575px) and (min-width: 425px){
     .purchaseDetails{
@@ -76,11 +77,9 @@
 
 @media screen and (min-width: 576px) {
     .checkoutBody{
-        max-height: 90vh;
-        overflow-y: hidden;
+        max-height: 100vh;
     }
     .orderSection{
-        overflow-y: scroll;
-        height: 80%;
+        height: 100%;
     }
 }
