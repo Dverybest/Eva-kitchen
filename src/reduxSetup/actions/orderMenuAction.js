@@ -5,7 +5,7 @@ export const addToCartAction = (payload) => (dispatch, getState) => {
   const itemInCart = getState().cart.cartItem;
   const index = itemInCart.findIndex((item) => item.name === payload.name)
   let itemsToAdd;
-  if (index != -1) {
+  if (index !== -1) {
     itemsToAdd = itemInCart.map((item, itemIndex) => {
       if (index === itemIndex) item.quantity += payload.quantity
       orderQuantity += item.quantity;
@@ -24,7 +24,6 @@ export const addToCartAction = (payload) => (dispatch, getState) => {
     payload: itemsToAdd,
   });
 };
-//
 
 export const handleIncrementChange = (payload) => (dispatch, getState) => {
   let orderQuantity = 0;

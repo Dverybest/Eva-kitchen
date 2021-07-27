@@ -1,5 +1,4 @@
 import React from "react";
-// import './authentication.css';
 import {useHistory} from "react-router-dom";
 
 const Shipping = () => {
@@ -14,7 +13,6 @@ const Shipping = () => {
                 </div>
                 <div className="col-sm-6">
                     <div className="form-group ">
-                    {/* <label htmlFor="" className="inputLabel">Full Name</label> */}
                     <input
                         type="text"
                         className="form-control inputDetails"
@@ -64,7 +62,6 @@ const Shipping = () => {
           <div className="d-flex justify-content-end align-items-rigt">
             <button  className="btn registerButton ">Cancel order</button>
             <button  className="btn registerButton activeButton">Payment</button>
-            {/* <button  onClick={()=>setmanageAuth("signIn")} className="btn registerButton ">Sign In</button>  */}
           </div>
         </form>
         

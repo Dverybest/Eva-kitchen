@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { connect, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import SignIn from "../../components/Authentication/signIn";
 import empty from '../../assets/empty.svg';
 import Navbar from "../../components/navbar/Navbar";
@@ -24,13 +23,7 @@ const CheckoutPage = (props) => {
 
     props.handleDecrementChange(index);
   };
-  // const [show, setshow] = useState(false)
   const [manageAuth, setmanageAuth] = useState('signIn');
-  // handlePageChange = (e, auth)=>{
-  //   e.preventDefault();
-  //   setshow(true)
-  //   setmanageAuth(auth)
-  // }
   useEffect(() => {
     setCurrentCart(props.cart);
   }, [props.cart]);
@@ -52,7 +45,7 @@ const CheckoutPage = (props) => {
         {
           currentCart.length === 0 ? (
             <div className='empty-container'>
-              <img src={empty} />
+              <img src={empty} alt=''/>
               <p>No food selected yet</p>
             </div>
           ) : null
@@ -147,9 +140,7 @@ const CheckoutPage = (props) => {
                   </div>
                 </div>
                 {
-                  // 
                   !props.isAuthenticated?manageAuth==='signIn'?<SignIn setmanageAuth={setmanageAuth}/>:<SignUp setmanageAuth={setmanageAuth}/>:<Shipping/>
-                  // 
                 }
                 {/* no cancel order option yet*/}
                 {/* <Link >Cancel Order</Link>*/}

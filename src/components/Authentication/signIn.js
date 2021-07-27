@@ -1,12 +1,10 @@
 import React,{useState} from "react";
 import './authentication.css'
-import { useHistory } from "react-router-dom";
 import { NotificationManager } from "react-notifications";
 import { connect } from "react-redux";
 import { signInAction } from "../../reduxSetup/actions/authAction";
 
 const SignIn = (props) => {
-    const history = useHistory();
     const [email,setEmail] = useState('');
     console.log(email);
     const [password,setPassword] = useState('');
