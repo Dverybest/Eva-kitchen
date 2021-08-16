@@ -83,7 +83,7 @@ const OrderPage = (props)=> {
                 <div className="container">
                     <h3 className="tabHeading">Related Dishes</h3>
                     <div className="row">
-                        {props.allMenu?.slice(0,3).map((dish, index)=>{
+                        {props.allMenu?.docs?.slice(0,3).map((dish, index)=>{
                                 return <Dish key={index} {...dish} />
                         })}
                     </div>
@@ -93,7 +93,7 @@ const OrderPage = (props)=> {
                 <div className="container">
                     <h3 className="tabHeading">other Dishes</h3>
                     <div className="row">
-                        {props.allMenu?.slice(0,3).map((dish, index)=>{
+                        {props.allMenu?.docs?.slice(0,3).map((dish, index)=>{
                             return <Dish key={index} {...dish} />
                         })}
                     </div>
@@ -105,6 +105,7 @@ const OrderPage = (props)=> {
     )
 }
 const mapStateToProps=(state)=>{
+    console.log(state.meals.allMenu, 'allMenu');
     return{
         allMenu: state.meals.allMenu,
     };
