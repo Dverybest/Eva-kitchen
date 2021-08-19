@@ -26,7 +26,6 @@ const SignUp = (props) => {
       if(!signUpDetails.password) return NotificationManager.error('Password cannot be empty')
       props.signUpAction(signUpDetails)
       .then(res=>{
-        console.log(res);
         NotificationManager.success(res.message)
       }).catch(err=>NotificationManager.error(err.message))
     }

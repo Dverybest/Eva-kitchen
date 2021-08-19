@@ -34,7 +34,6 @@ const CheckoutPage = (props) => {
     () =>
     props.cart.reduce(
       (amount, current) => {
-        console.log(current, amount, "jjhidd s amount");
         return [
         Number(amount[0]) + discounter(current.price, current.discount) * Number(current.quantity),
         Number(amount[1]) + discounter(current.price, current.discount),

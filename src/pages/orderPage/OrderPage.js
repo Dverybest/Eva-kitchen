@@ -110,7 +110,6 @@ const OrderPage = (props)=> {
     )
 }
 const mapStateToProps=(state)=>{
-    console.log(state.meals.allMenu, 'allMenu');
     return{
         allMenu: state.meals.allMenu,
     };
