@@ -1,7 +1,22 @@
 import axios from "axios";
+import { getStorage } from "../utils/storage";
 import { BASEURL } from "./config";
 
 axios.defaults.baseURL = BASEURL;
+axios.interceptors.request.use(config => {
+    const result = getStorage();
+    config.headers = {
+      'x-auth-token': result?.auth?.userDetail?.authToken,
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+    };
+    return config;
+  },
+  (error) => {
+    Promise.reject(error);
+  },
+);
 export const requestProcessor = async({
     method,
     url, 
