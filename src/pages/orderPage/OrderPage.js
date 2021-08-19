@@ -7,11 +7,12 @@ import { NotificationManager } from "react-notifications";
 import {getMenuAction} from "../../reduxSetup/actions/menuAction";
 import {addToCartAction,} from "../../reduxSetup/actions/orderMenuAction";
 import Dish from '../../components/reusableMenuCard/Dish';
-
+import { discounter } from '../../utils/discounter';
+import StarRatings from 'react-star-ratings';
 
 const OrderPage = (props)=> {
     let formatPrice =  new Intl.NumberFormat() 
-    const meal = props.location.state;        
+    const meal = props.location.state;
     const [quantity, setquantity] = useState(0)
     const addItemToCart =(e)=>{
         e.preventDefault();
@@ -31,7 +32,7 @@ const OrderPage = (props)=> {
         }
         setquantity(quantity - 1);
     }
-    
+   
     useEffect(() => {
         props.getMenuAction();        
     }, []);
@@ -52,6 +53,7 @@ const OrderPage = (props)=> {
                         <div className="col-sm-6">
                             <div className="mealDetails">
                                 <h4 className="price">₦{formatPrice.format(meal.price)}</h4>
+                                <h4 className="price">₦{formatPrice.format(discounter(meal.price, meal.discount))}</h4>
                                 <div className="py-4">
                                     <span className="numberButton" onClick={handleDecrement} disabled={quantity < 1}><i class="fa fa-minus" aria-hidden="true"></i></span>
                                     <span className="mx-2">{quantity}</span>
@@ -61,11 +63,14 @@ const OrderPage = (props)=> {
                                 <p className='description'>{meal.description}</p>
                                 <h6 className="priceTotal">₦{formatPrice.format(meal.price * quantity)}</h6>
                                 <div className="my-3">
-                                    <span className="starColourOrange"><i class="fa fa-star" aria-hidden="true"></i></span>
-                                    <span className="starColourOrange"><i class="fa fa-star" aria-hidden="true"></i></span>
-                                    <span className="starColourOrange"><i class="fa fa-star" aria-hidden="true"></i></span>
-                                    <span className="starColourOrange"><i class="fa fa-star-half-o" aria-hidden="true"></i></span>
-                                    <span className="starColourOrange"><i class="fa fa-star-o" aria-hidden="true"></i></span>
+                                    <StarRatings
+                                        numberOfStars = {5}
+                                        starRatedColor="rgba(255, 141, 35, 1)"
+                                        starEmptyColor="grey"
+                                        rating = {meal.rating}
+                                        starDimension="20px"
+                                        starSpacing="3px"
+                                    />
                                 </div>
                                 <div>
                                     <button className="btn cartButton" onClick={addItemToCart}>Add to Cart</button>
