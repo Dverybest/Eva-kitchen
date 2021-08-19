@@ -8,7 +8,7 @@ import { signUpAction } from "../../reduxSetup/actions/authAction";
 const SignUp = (props) => {
     const history =  useHistory();
     const [signUpDetails, setsignUpDetails] = useState({
-      username: "",
+      fullName: "",
       password: "",
       phoneNumber: "",
       email: '',
@@ -43,7 +43,8 @@ const SignUp = (props) => {
                 className="form-control inputDetails"
                 placeholder="Jane Doe"
                 required
-                value={signUpDetails.username}
+                name="fullName"
+                value={signUpDetails.fullName}
                 onChange={handleChange}
               />
             </div>
@@ -54,6 +55,7 @@ const SignUp = (props) => {
                 className="form-control inputDetails"
                 placeholder="example@email.com"
                 required
+                name="email"
                 value={signUpDetails.email}
                 onChange={handleChange}
               />
@@ -66,6 +68,7 @@ const SignUp = (props) => {
                 placeholder="+234 xxxxxxxxx"
                 value={signUpDetails.phoneNumber}
                 required
+                name="phoneNumber"
                 onChange={handleChange}
               />
             </div>
@@ -77,6 +80,7 @@ const SignUp = (props) => {
                 placeholder="*******"
                 value={signUpDetails.password}
                 required
+                name="password"
                 onChange={handleChange}
               />
             </div>
