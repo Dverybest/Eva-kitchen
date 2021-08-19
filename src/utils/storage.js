@@ -1,8 +1,8 @@
 export const getStorage = ()=>{
     try {
        let value = localStorage.getItem('itemKey');
-       if (typeof value === "string") return JSON.parse(value);
-       return { }
+       if (value) return JSON.parse(value);
+       else return {}
     } catch (error) {
         return{}
     }
