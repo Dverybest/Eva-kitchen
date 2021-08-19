@@ -2,7 +2,7 @@ import React from "react";
 import "./Dish.css";
 import { useHistory } from "react-router-dom";
 
-const Dish = ({ image, name, price, rating, description}) => {
+const Dish = ({ image, name, price, rating, description, discount, _id}) => {
   let formatPrice =  new Intl.NumberFormat() 
   const scrollToTop =()=>{
     window.scrollTo(0,0)
@@ -22,7 +22,7 @@ const Dish = ({ image, name, price, rating, description}) => {
           </div>
           <p> {description} </p>
           <button onClick={() => {
-            history.push({pathname:"/order", state:{name, image, price, rating, description}});
+            history.push({pathname:"/order", state:{name, image, price, rating, description, _id, discount}});
             scrollToTop();
           }}>Order</button>
         </div>

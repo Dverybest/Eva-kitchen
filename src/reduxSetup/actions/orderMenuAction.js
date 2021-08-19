@@ -1,4 +1,6 @@
-import { ADD_TO_CART, DECREMENT, INCREMENT, ITEMS_IN_CART } from "../constants";
+import { requestProcessor } from "../../URLs/requestProcessor";
+import { ADD_TO_CART, CLEAR_CART, DECREMENT, INCREMENT, ITEMS_IN_CART } from "../constants";
+import { loadingAction } from "./loadingAction";
 
 export const addToCartAction = (payload) => (dispatch, getState) => {
   let orderQuantity = 0;
@@ -57,3 +59,24 @@ export const handleDecrementChange = (payload) => (dispatch, getState) => {
     payload: orderQuantity,
   });
 };
+
+export const PostShippingAction = (payload) => (dispatch)=>
+new Promise(async(resolve, reject) => {
+  dispatch(loadingAction(true));
+  try{
+    const response = await requestProcessor({
+      method:'post',
+      url: '/makeorder',
+      payload,
+      dispatch,
+    });
+    dispatch({type:CLEAR_CART, payload: null})
+    resolve(response);
+  }
+  catch(error){
+    reject(error)
+  }
+  finally{
+    dispatch(loadingAction(false));
+  }
+})
