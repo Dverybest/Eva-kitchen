@@ -10,3 +10,4 @@ export const DECREMENT= 'DECREMENT';
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const IS_AUTHENTICATED = 'IS_AUTHENTICATED';
 export const LOG_OUT='LOG_OUT';
+export const CLEAR_CART='CLEAR_CART';

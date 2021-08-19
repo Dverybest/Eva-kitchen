@@ -6,7 +6,6 @@ import { signInAction } from "../../reduxSetup/actions/authAction";
 
 const SignIn = (props) => {
     const [email,setEmail] = useState('');
-    console.log(email);
     const [password,setPassword] = useState('');
     const handleSignIn =(e)=>{
       e.preventDefault()
@@ -14,7 +13,6 @@ const SignIn = (props) => {
       if(!password) return NotificationManager.error('Password cannot be empty')
       props.signInAction({email,password})
       .then(res=>{
-        console.log(res);
         NotificationManager.success(res.message)
       }).catch(err=>NotificationManager.error(err.message))
     }
